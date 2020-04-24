@@ -1,0 +1,18 @@
+@mixin baseProps {
+  user-select: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 1.1vmax;
+}
+
+@mixin container {
+  min-width: 300px;
+  max-width: 1024px;
+  margin: 0 auto;
+  @include baseProps;
+}
+
+@mixin a {
+  color: $blue;
+  text-decoration: none;
+}

@@ -1,0 +1,49 @@
+{
+	"name": "mango",
+	"version": "1.0.0",
+	"description": "mango webagentur",
+	"author": "micromechanika",
+	"private": true,
+	"scripts": {
+		"dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+		"build": "nuxt build",
+		"start": "cross-env NODE_ENV=production node server/index.js",
+		"generate": "nuxt generate",
+		"lint:fix": "eslint --ext .js,.vue --fix --color --ignore-path .gitignore . --ignore-pattern .eslintignore"
+	},
+	"dependencies": {
+		"@nuxtjs/axios": "^5.3.6",
+		"@nuxtjs/dotenv": "^1.4.0",
+		"@nuxtjs/style-resources": "^1.0.0",
+		"cross-env": "^5.2.0",
+		"express": "^4.16.4",
+		"node-sass": "^4.13.1",
+		"normalize.css": "^8.0.1",
+		"nuxt": "^2.0.0",
+		"sass-loader": "^8.0.2"
+	},
+	"devDependencies": {
+		"@nuxtjs/eslint-config": "^2.0.0",
+		"@nuxtjs/eslint-module": "^1.0.0",
+		"babel-eslint": "^10.0.1",
+		"eslint": "^6.1.0",
+		"eslint-config-prettier": "^6.10.0",
+		"eslint-plugin-nuxt": ">=0.4.2",
+		"eslint-plugin-prettier": "^3.1.2",
+		"husky": "^2.1.0",
+		"lint-staged": "^8.1.5",
+		"nodemon": "^1.18.9",
+		"prettier": "^1.19.1"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.(js|vue)": [
+			"prettier -c",
+			"eslint --cache --ext .js,.vue --fix --color --ignore-path .gitignore . --ignore-pattern .eslintignore"
+		]
+	}
+}
