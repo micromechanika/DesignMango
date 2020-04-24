@@ -103,7 +103,6 @@ const actions = {
 		commit('callToActionData', data)
 	},
 }
-let war=[]
 export default {
 	state,
 	mutations,
