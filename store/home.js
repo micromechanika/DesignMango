@@ -1,5 +1,5 @@
 const state = () => ({
-  callToActionData: [],
+	callToActionData: [],
 })
 
 const mutations = {
