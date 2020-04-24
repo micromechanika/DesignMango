@@ -5,11 +5,10 @@
 	"author": "micromechanika",
 	"private": true,
 	"scripts": {
-		"dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+		"dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server --open",
 		"build": "nuxt build",
 		"start": "cross-env NODE_ENV=production node server/index.js",
-		"generate": "nuxt generate",
-		"lint:fix": "eslint --ext .js,.vue --fix --color --ignore-path .gitignore . --ignore-pattern .eslintignore"
+		"generate": "nuxt generate"
 	},
 	"dependencies": {
 		"@nuxtjs/axios": "^5.3.6",
@@ -32,9 +31,9 @@
 		"eslint-plugin-prettier": "^3.1.2",
 		"husky": "^2.1.0",
 		"lint-staged": "^8.1.5",
-		"nodemon": "^1.18.9",
-		"prettier": "^1.19.1"
-	},
+		"prettier": "^1.19.1",
+    "nodemon": "^1.18.9"
+  },
 	"husky": {
 		"hooks": {
 			"pre-commit": "lint-staged"
@@ -42,7 +41,7 @@
 	},
 	"lint-staged": {
 		"*.(js|vue)": [
-			"prettier -c",
+			"prettier --write --list-different --ignore-path .gitignore .",
 			"eslint --cache --ext .js,.vue --fix --color --ignore-path .gitignore . --ignore-pattern .eslintignore"
 		]
 	}

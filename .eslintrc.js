@@ -14,7 +14,6 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:nuxt/recommended'
   ],
-  // add your custom rules here
   rules: {
     'nuxt/no-cjs-in-config': 'off',
     'prettier/prettier': 'error',
@@ -37,30 +36,6 @@ module.exports = {
       },
     ],
     'prefer-destructuring': 'off',
-    // indent: [
-    //   'error',
-    //   'tab',
-    //   {
-    //     SwitchCase: 1,
-    //     VariableDeclarator: 'first',
-    //     outerIIFEBody: 0,
-    //     MemberExpression: 1,
-    //     FunctionDeclaration: {
-    //       parameters: 'first',
-    //     },
-    //     FunctionExpression: {
-    //       parameters: 'first',
-    //     },
-    //     CallExpression: {
-    //       arguments: 'first',
-    //     },
-    //     ArrayExpression: 1,
-    //     ObjectExpression: 1,
-    //     ImportDeclaration: 1,
-    //     flatTernaryExpressions: true,
-    //     ignoreComments: true,
-    //   },
-    // ],
     'no-tabs': [
       'error',
       {
