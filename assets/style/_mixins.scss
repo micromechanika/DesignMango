@@ -13,6 +13,14 @@
 }
 
 @mixin a {
-  color: $blue;
+  color: $white;
   text-decoration: none;
+}
+
+@mixin greenGradient {
+  background: linear-gradient(180deg, #25E57E 0%, rgba(37, 229, 126, 0.19) 100%);
+}
+
+body{
+  background-color: $bg;
 }
