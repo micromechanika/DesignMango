@@ -25,7 +25,10 @@
 				<img src="@/assets/img/bow.svg" />
 				<p>Sign in</p>
 			</div>
-			<p>en</p>
+			<div class="lang">
+				<p>eng</p>
+				<img src="@/assets/img/mark.svg" />
+			</div>
 		</aside>
 	</header>
 </template>
@@ -62,8 +65,10 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-end;
+		align-content: space-between;
 		align-items: center;
 		.button {
+			margin: 0 2.5em 0 0;
 			position: relative;
 			width: 5.625em;
 			height: 2.75em;
@@ -79,6 +84,22 @@
 				position: absolute;
 				top: -1.3125em;
 				right: 0.1875em;
+			}
+		}
+		.lang {
+			margin: 0 0 0 2.5em;
+			color: $white;
+			text-transform: uppercase;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-around;
+			p {
+				font-size: 0.875em;
+				margin: 0 0.3125em 0 0;
+			}
+			img {
+				width: 0.635em;
 			}
 		}
 	}
