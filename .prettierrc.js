@@ -12,7 +12,7 @@ module.exports = {
 	arrowParens: 'avoid',
 	endOfLine: 'lf',
 	quoteProps: 'as-needed',
-	// rangeStart: 0,
-	// rangeEnd: null,
+	rangeStart: 0,
+	rangeEnd: Infinity,
 	proseWrap: 'never',
 }
