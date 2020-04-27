@@ -1,36 +1,32 @@
 <template>
 	<header>
 		<nuxt-link to="/">
-			<img src="https://ik.imagekit.io/nz3xsf2fh/logo/mango-webdesign-logo_uQ43lNpTk.png" />
+			<img src="@/assets/img/logo.svg" />
 		</nuxt-link>
 		<nav>
 			<nuxt-link to="/">
-				<p>webdesign</p>
+				<p>Web-design</p>
 			</nuxt-link>
 			<nuxt-link to="/seo">
-				<p>seo</p>
+				<p>SEO</p>
 			</nuxt-link>
 			<nuxt-link to="/marketing">
-				<p>marketing</p>
+				<p>Marketing</p>
 			</nuxt-link>
 			<nuxt-link to="/preise">
-				<p>preise</p>
+				<p>Preise</p>
 			</nuxt-link>
 			<nuxt-link to="/referenzen">
-				<p>referenzen</p>
+				<p>Referenzen</p>
 			</nuxt-link>
 		</nav>
-		<address>
-			<nuxt-link to="/">
-				<img src="https://ik.imagekit.io/nz3xsf2fh/icons/nav/mango-phone-icon_s5VRoTyeE.svg" />
-			</nuxt-link>
-			<nuxt-link to="/" href="tel:0800/77766677" rel="nofollow">
-				<p>0800/77766677</p>
-			</nuxt-link>
-			<nuxt-link to="/">
-				<p>uber uns</p>
-			</nuxt-link>
-		</address>
+		<aside>
+			<div class="button">
+				<img src="@/assets/img/bow.svg" />
+				<p>Sign in</p>
+			</div>
+			<p>en</p>
+		</aside>
 	</header>
 </template>
 
@@ -48,35 +44,42 @@
 		align-items: center;
 	}
 	img {
-		width: 11.875em;
+		width: 9.25em;
+		margin: 1.5em 0;
 	}
 	nav {
 		display: flex;
 		flex-direction: row;
-		justify-content: space-between;
-		text-transform: uppercase;
-		font-size: 1.15em;
-		font-weight: bold;
+		justify-content: space-around;
+		font-size: 1em;
+		line-height: 1.25em;
 		a {
-			margin: 0 0.5em;
+			margin: 0 1.875em;
 			@include a;
 		}
 	}
-	address {
+	aside {
 		display: flex;
 		flex-direction: row;
-		justify-content: space-around;
+		justify-content: flex-end;
 		align-items: center;
-		font-style: normal;
-		font-size: 1.15em;
-		font-weight: bold;
-		img {
-			width: auto;
-			height: 1.5em;
-		}
-		a {
-			margin: 0 0.5em;
-			@include a;
+		.button {
+			position: relative;
+			width: 5.625em;
+			height: 2.75em;
+			border: 0.125em solid $green;
+			p {
+				position: absolute;
+				left: 0.2375em;
+				bottom: 0.3625em;
+				color: $green;
+			}
+			img {
+				width: 0.77em;
+				position: absolute;
+				top: -1.3125em;
+				right: 0.1875em;
+			}
 		}
 	}
 </style>

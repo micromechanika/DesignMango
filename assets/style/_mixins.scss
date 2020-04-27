@@ -1,8 +1,12 @@
+@mixin font {
+  font-family: "Poppins", sans-serif;
+}
+
 @mixin baseProps {
   user-select: none;
   box-sizing: border-box;
   cursor: pointer;
-  font-size: 1.1vmax;
+  font-size: 1.25vmax;
 }
 
 @mixin container {
@@ -23,4 +27,5 @@
 
 body{
   background-color: $bg;
+  @include font;
 }
