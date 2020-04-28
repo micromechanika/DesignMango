@@ -101,7 +101,8 @@
 		position: absolute;
 		z-index: 100;
 		top: 14.5em;
-		width: 45.8%;
+		width: 48.8%;
+		word-wrap: break-word;
 		h1 {
 			margin: 0;
 			font-size: 4em;

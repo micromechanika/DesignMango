@@ -4,6 +4,7 @@
 		<Video />
 		<div class="empty"></div>
 		<Certificates />
+		<TestSpeed />
 	</div>
 </template>
 
@@ -11,8 +12,9 @@
 	import Header from '../components/header'
 	import Video from '../components/video'
 	import Certificates from '../components/certificates'
+	import TestSpeed from '../components/testSpeed'
 	export default {
-		components: { Video, Header, Certificates },
+		components: { Video, Header, Certificates, TestSpeed },
 	}
 </script>
 
