@@ -5,6 +5,7 @@
 		<div class="empty"></div>
 		<Certificates />
 		<TestSpeed />
+		<CallAction />
 	</div>
 </template>
 
@@ -13,8 +14,9 @@
 	import Video from '../components/video'
 	import Certificates from '../components/certificates'
 	import TestSpeed from '../components/testSpeed'
+	import CallAction from '../components/callAction'
 	export default {
-		components: { Video, Header, Certificates, TestSpeed },
+		components: { Video, Header, Certificates, TestSpeed, CallAction },
 	}
 </script>
 
@@ -23,7 +25,6 @@
 		@include container;
 	}
 	.empty {
-		width: auto;
 		height: 800px;
 		margin: 0;
 		padding: 0;

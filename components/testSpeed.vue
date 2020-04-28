@@ -29,14 +29,15 @@
 
 <style lang="scss" scoped>
 	.testSpeed {
-		margin: 15.5em 0 15em 0;
+		margin: 15.5em 0 0 0;
+		width: 100%;
 		display: flex;
 		flex-direction: row;
 		align-items: flex-start;
 		justify-content: space-between;
 	}
 	.action {
-		width: 48.8%;
+		width: 44%;
 		margin: 0 1em 0 0;
 		h2 {
 			font-weight: 500;
@@ -50,9 +51,9 @@
 		}
 	}
 	.message {
-		width: 40.3%;
+		width: 44%;
 		margin: 0 0 0 1em;
-		font-size: 1em;
+		font-size: 1.25em;
 		line-height: 130%;
 		word-wrap: break-word;
 		color: $white;
@@ -60,18 +61,18 @@
 			margin: 0 0 5em 0;
 		}
 	}
-
 	.checkspeed {
 		display: flex;
 		flex-direction: row;
-		align-items: flex-start;
+		justify-content: center;
+		align-items: center;
 		p {
 			margin: 0;
 			padding: 0;
 		}
 		input {
 			background-color: $bg;
-			width: 28.125em;
+			width: 63.9%;
 			height: 6.18em;
 			border: 0.125em solid $green;
 			color: $green;
@@ -91,7 +92,7 @@
 		button {
 			position: relative;
 			z-index: 100;
-			width: 15.875em;
+			width: 36.07%;
 			height: 6.18em;
 			border: 0.125em solid $green;
 			border-left: none;
@@ -100,7 +101,7 @@
 			margin: 0;
 			p {
 				position: absolute;
-				left: 0.4625em;
+				left: 0.1625em;
 				bottom: 0.1375em;
 				color: $bg;
 				font-size: 1.25em;
