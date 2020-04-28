@@ -13,7 +13,6 @@
   min-width: 300px;
   max-width: 1024px;
   margin: 0 auto;
-  @include baseProps;
 }
 
 @mixin a {
@@ -32,4 +31,5 @@
 body{
   background-color: $bg;
   @include font;
+  @include baseProps;
 }

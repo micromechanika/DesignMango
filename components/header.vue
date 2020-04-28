@@ -48,6 +48,7 @@
 	}
 	img {
 		width: 9.25em;
+		height: auto;
 		margin: 1.5em 0;
 	}
 	nav {
@@ -82,6 +83,7 @@
 			img {
 				margin: 0;
 				width: 0.77em;
+				height: auto;
 				position: absolute;
 				top: 0.3125em;
 				right: 0.1875em;
@@ -101,6 +103,7 @@
 			}
 			img {
 				width: 0.635em;
+				height: auto;
 			}
 		}
 	}
