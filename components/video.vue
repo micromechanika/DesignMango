@@ -1,9 +1,9 @@
 <template>
 	<div class="myVideo">
 		<div class="gradientTop" @click="show = !show"></div>
-		<img v-show="!show" src="../assets/video/roadster.jpg" />
+		<img v-show="!show" src="@/assets/video/roadster.jpg" />
 		<video v-show="show" autoplay muted loop>
-			<source src="../assets/video/Roadster.mp4" type="video/mp4" />
+			<source src="@/assets/video/Roadster.mp4" type="video/mp4" />
 			Элемент video не поддерживается вашим браузером.
 		</video>
 		<div class="gradientBottom" @click="show = !show"></div>
