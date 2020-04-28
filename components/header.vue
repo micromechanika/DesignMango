@@ -80,9 +80,10 @@
 				color: $green;
 			}
 			img {
+				margin: 0;
 				width: 0.77em;
 				position: absolute;
-				top: -1.3125em;
+				top: 0.3125em;
 				right: 0.1875em;
 			}
 		}

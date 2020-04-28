@@ -4,7 +4,7 @@
 		<img v-show="!show" src="@/assets/video/roadster.jpg" />
 		<video v-show="show" autoplay muted loop>
 			<source src="@/assets/video/Roadster.mp4" type="video/mp4" />
-			Элемент video не поддерживается вашим браузером.
+			please update you browser
 		</video>
 		<div class="gradientBottom" @click="show = !show"></div>
 	</div>
@@ -23,8 +23,12 @@
 
 <style scoped lang="scss">
 	.myVideo {
+		position: absolute;
+		left: 0;
+		top: 0;
 		width: 100%;
 		height: 800px;
+
 		.gradientTop,
 		.gradientBottom {
 			position: absolute;
