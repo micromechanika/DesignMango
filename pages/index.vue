@@ -6,6 +6,7 @@
 		<Certificates />
 		<TestSpeed />
 		<CallAction />
+		<OurWorks />
 	</div>
 </template>
 
@@ -15,8 +16,9 @@
 	import Certificates from '../components/certificates'
 	import TestSpeed from '../components/testSpeed'
 	import CallAction from '../components/callAction'
+	import OurWorks from '../components/OurWorks'
 	export default {
-		components: { Video, Header, Certificates, TestSpeed, CallAction },
+		components: { Video, Header, Certificates, TestSpeed, CallAction, OurWorks },
 	}
 </script>
 

@@ -28,6 +28,7 @@
   background: linear-gradient($deg, rgba(5, 4, 30, 0.15) 0%, rgba(0, 0, 0, 0.21) 20%,rgba(0, 0, 0, 0.11) 80%, $bg 100%);
 }
 
+
 body{
   background-color: $bg;
   @include font;
