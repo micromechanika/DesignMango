@@ -7,6 +7,7 @@
 		<TestSpeed />
 		<CallAction />
 		<OurWorks />
+		<Slider />
 	</div>
 </template>
 
@@ -16,9 +17,10 @@
 	import Certificates from '../components/certificates'
 	import TestSpeed from '../components/testSpeed'
 	import CallAction from '../components/callAction'
-	import OurWorks from '../components/OurWorks'
+	import OurWorks from '../components/ourWorks'
+	import Slider from '../components/slider'
 	export default {
-		components: { Video, Header, Certificates, TestSpeed, CallAction, OurWorks },
+		components: { Video, Header, Certificates, TestSpeed, CallAction, OurWorks, Slider },
 	}
 </script>
 
