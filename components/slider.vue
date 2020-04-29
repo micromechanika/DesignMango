@@ -1,21 +1,26 @@
 <template>
 	<div class="slider">
 		<div class="message">
-			<h2>How it <span>works</span></h2>
+			<h2
+				>{{ message.h2 }} <span>{{ message.span }}</span></h2
+			>
 		</div>
 		<div class="item">
-			<img src="../assets/img/slider/slide1.png" alt="slide1" />
+			<img :src="require(`@/assets/img/slider/${img.src}`)" :alt="`${img.alt}`" />
 			<section>
 				<div class="container">
 					<div class="description">
-						<h6>First step</h6>
-						<h2>Prepare</h2>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin proin adipiscing mi dictum scelerisque eget. Porttitor adipiscing rhoncus
-							mattis felis semper mattis tempus nullam.
-						</p>
+						<h6>{{ description.h6 }}</h6>
+						<h2>{{ description.h2 }}</h2>
+						<p>{{ description.p }}</p>
 					</div>
-					<div class="cards"> </div>
+					<div class="cards">
+						<article v-for="(item, id) in cards" :key="id">
+							<h3>{{ item.h3 }}</h3>
+							<h4>{{ item.h4 }}</h4>
+							<p>{{ item.p }}</p>
+						</article>
+					</div>
 				</div>
 			</section>
 		</div>
@@ -25,14 +30,52 @@
 <script>
 	export default {
 		name: 'Slider',
+		props: {
+			message: {
+				type: Object,
+				default() {
+					return {
+						h2: 'How it',
+						span: 'works',
+					}
+				},
+			},
+			cards: {
+				type: Array,
+				default() {
+					return [
+						{ h3: 'Personal', h4: 'designer', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+						{ h3: 'preference', h4: 'consideration ', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+						{ h3: 'keyword', h4: 'pre-cheking', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+					]
+				},
+			},
+			description: {
+				type: Object,
+				default() {
+					return {
+						h6: 'First step',
+						h2: 'Prepare',
+						p:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin proin adipiscing mi dictum scelerisque eget. Porttitor adipiscing rhoncus mattis felis semper mattis tempus nullam.',
+					}
+				},
+			},
+			img: {
+				type: Object,
+				default() {
+					return { src: 'slide1.png', alt: 'slide1' }
+				},
+			},
+		},
 	}
 </script>
 
 <style lang="scss" scoped>
 	.slider {
 		width: 100%;
-		height: 50em;
-		margin: 12.5em 0;
+		height: 50rem;
+		margin: 12.5rem 0;
 	}
 	.message {
 		display: flex;
@@ -43,7 +86,7 @@
 		height: 100%;
 		h2 {
 			font-weight: 600;
-			font-size: 88px;
+			font-size: 5.5rem;
 			line-height: 130%;
 			color: $white;
 			span {
@@ -52,6 +95,8 @@
 		}
 	}
 	.item {
+		width: 100%;
+		height: 100%;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -65,35 +110,59 @@
 			width: 66.25%;
 			height: 100%;
 		}
-		.container {
-			width: 66.79%;
-			margin: 0 auto;
+	}
+	.container {
+		width: 66.79%;
+		margin: 0 auto;
+	}
+	.description {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		color: $white;
+		margin: 3.28rem 0;
+		h6 {
+			font-size: 1rem;
+			line-height: 1.5rem;
+			margin: 0 0 0.25rem 0;
 		}
-		.description {
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-start;
-			color: $white;
-			margin: 3.28em 0;
-			h6 {
-				font-size: 1em;
-				line-height: 1.5em;
-				margin: 0 0 0.25em 0;
-			}
-			h2 {
-				font-weight: 500;
-				font-size: 4em;
+		h2 {
+			font-weight: 500;
+			font-size: 4rem;
+			line-height: 130%;
+			margin: 0 0 2rem 0;
+		}
+		p {
+			font-size: 1.25rem;
+			line-height: 130%;
+		}
+	}
+	.cards {
+		margin: 3.28rem 0;
+		color: $white;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+		article {
+			word-break: break-word;
+			width: 30%;
+			h3 {
+				font-size: 1.5rem;
 				line-height: 130%;
-				margin: 0 0 2em 0;
+				text-transform: uppercase;
+			}
+			h4 {
+				font-size: 1.5rem;
+				line-height: 130%;
+				text-transform: uppercase;
+				color: $green;
+				margin: 0 0 2.6875rem 0;
 			}
 			p {
-				font-size: 1.25em;
-				line-height: 130%;
+				font-size: 1rem;
+				line-height: 1.5rem;
 			}
-		}
-		.cards {
-			margin: 3.28em 0;
-			color: $white;
 		}
 	}
 </style>
