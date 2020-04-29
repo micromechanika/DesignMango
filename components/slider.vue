@@ -1,24 +1,25 @@
 <template>
 	<div class="slider">
 		<div class="message">
-			<h2
-				>{{ message.h2 }} <span>{{ message.span }}</span></h2
-			>
+			<h2>
+				{{ message.h2 }}
+				<span> {{ message.span }} </span>
+			</h2>
 		</div>
-		<div class="item">
-			<img :src="require(`@/assets/img/slider/${img.src}`)" :alt="`${img.alt}`" />
+		<div v-for="(slide, slideID) in sliders" :key="slideID" class="item">
+			<img :src="require(`@/assets/img/slider/${slide.img.src}`)" :alt="`${slide.img.alt}`" />
 			<section>
 				<div class="container">
 					<div class="description">
-						<h6>{{ description.h6 }}</h6>
-						<h2>{{ description.h2 }}</h2>
-						<p>{{ description.p }}</p>
+						<h6>{{ slide.description.h6 }}</h6>
+						<h2>{{ slide.description.h2 }}</h2>
+						<p>{{ slide.description.p }}</p>
 					</div>
 					<div class="cards">
-						<article v-for="(item, id) in cards" :key="id">
-							<h3>{{ item.h3 }}</h3>
-							<h4>{{ item.h4 }}</h4>
-							<p>{{ item.p }}</p>
+						<article v-for="(card, cardID) in slide.cards" :key="cardID">
+							<h3>{{ card.h3 }}</h3>
+							<h4>{{ card.h4 }}</h4>
+							<p>{{ card.p }}</p>
 						</article>
 					</div>
 				</div>
@@ -40,31 +41,53 @@
 					}
 				},
 			},
-			cards: {
+			sliders: {
 				type: Array,
 				default() {
 					return [
-						{ h3: 'Personal', h4: 'designer', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-						{ h3: 'preference', h4: 'consideration ', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-						{ h3: 'keyword', h4: 'pre-cheking', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+						{
+							img: { src: 'slide1.png', alt: 'slide1' },
+							description: {
+								h6: 'First step',
+								h2: 'Prepare',
+								p:
+									'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin proin adipiscing mi dictum scelerisque eget. Porttitor adipiscing rhoncus mattis felis semper mattis tempus nullam.',
+							},
+							cards: [
+								{ h3: 'Personal', h4: 'designer', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+								{ h3: 'preference', h4: 'consideration ', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+								{ h3: 'keyword', h4: 'pre-cheking', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+							],
+						},
+						{
+							img: { src: 'slide2.png', alt: 'slide2' },
+							description: {
+								h6: 'Second step',
+								h2: 'Action',
+								p:
+									'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin proin adipiscing mi dictum scelerisque eget. Porttitor adipiscing rhoncus mattis felis semper mattis tempus nullam.',
+							},
+							cards: [
+								{ h3: 'Personal', h4: 'designer', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+								{ h3: 'preference', h4: 'consideration ', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+								{ h3: 'keyword', h4: 'pre-cheking', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+							],
+						},
+						{
+							img: { src: 'slide3.png', alt: 'slide3' },
+							description: {
+								h6: 'Third step',
+								h2: 'Final Webpage',
+								p:
+									'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin proin adipiscing mi dictum scelerisque eget. Porttitor adipiscing rhoncus mattis felis semper mattis tempus nullam.',
+							},
+							cards: [
+								{ h3: 'Personal', h4: 'designer', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+								{ h3: 'preference', h4: 'consideration ', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+								{ h3: 'keyword', h4: 'pre-cheking', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+							],
+						},
 					]
-				},
-			},
-			description: {
-				type: Object,
-				default() {
-					return {
-						h6: 'First step',
-						h2: 'Prepare',
-						p:
-							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin proin adipiscing mi dictum scelerisque eget. Porttitor adipiscing rhoncus mattis felis semper mattis tempus nullam.',
-					}
-				},
-			},
-			img: {
-				type: Object,
-				default() {
-					return { src: 'slide1.png', alt: 'slide1' }
 				},
 			},
 		},
