@@ -25,6 +25,10 @@
 				</div>
 			</section>
 		</div>
+		<asside>
+			<img src="../assets/img/pointerLeft.svg" alt="leftPointer" />
+			<img src="../assets/img/pointerRight.svg" alt="rightPointer" />
+		</asside>
 	</div>
 </template>
 
@@ -96,9 +100,30 @@
 
 <style lang="scss" scoped>
 	.slider {
+		position: relative;
 		width: 100%;
 		height: 50rem;
 		margin: 12.5rem 0;
+	}
+	asside {
+		position: absolute;
+		right: -0.5rem;
+		bottom: 2rem;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		width: 8.375rem;
+		height: 3rem;
+		img {
+			width: 100%;
+			height: 100%;
+			&:first-of-type {
+				margin: 0 2rem 0 0;
+			}
+			&:last-of-type {
+				margin: 0 0 0 2rem;
+			}
+		}
 	}
 	.message {
 		display: flex;

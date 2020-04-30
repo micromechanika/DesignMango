@@ -43,10 +43,7 @@ module.exports = {
 		'@nuxtjs/style-resources',
 	],
 	styleResources: {
-		scss: [
-			'./assets/style/_vars.scss',
-			'./assets/style/_mixins.scss', // use underscore "_" & also file extension ".scss"
-		],
+		scss: ['./assets/style/_loadStyles.scss'],
 	},
 	/*
 	 ** Axios module configuration
