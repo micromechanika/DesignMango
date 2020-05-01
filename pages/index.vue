@@ -1,14 +1,17 @@
 <template>
-	<div class="container">
-		<Header />
+	<main>
+		<div class="container">
+			<Header />
+		</div>
 		<Video />
-		<div class="empty"></div>
-		<Certificates />
-		<TestSpeed />
-		<CallAction />
-		<OurWorks />
-		<Slider />
-	</div>
+		<div class="container">
+			<Certificates />
+			<TestSpeed />
+			<CallAction />
+			<OurWorks />
+			<Slider />
+		</div>
+	</main>
 </template>
 
 <script>
@@ -27,10 +30,5 @@
 <style lang="scss" scoped>
 	.container {
 		@include container;
-	}
-	.empty {
-		height: 800px;
-		margin: 0;
-		padding: 0;
 	}
 </style>

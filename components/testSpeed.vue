@@ -8,7 +8,7 @@
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna nec pulvinar praesent sed viverra quam malesuada et. Fusce enim, quis habitant
 				ut sed a non, ac non.
 			</p>
-			<form class="checkspeed">
+			<form>
 				<input type="text" name="checkSite" placeholder="www.google.com" />
 				<button type="submit">
 					<div>
@@ -61,22 +61,22 @@
 			margin: 0 0 5rem 0;
 		}
 	}
-	.checkspeed {
+	form {
 		display: flex;
 		flex-direction: row;
-		justify-content: center;
 		align-items: center;
-		p {
-			margin: 0;
-			padding: 0;
-		}
+		justify-content: center;
+		width: 100%;
+		height: 40px;
 		input {
 			background-color: $bg;
-			width: 63.9%;
-			height: 6.18rem;
+			width: 64%;
+			height: 100%;
 			border: 0.125rem solid $green;
+			border-right: none;
 			color: $green;
 			padding: 0 0 0 1.25rem;
+			margin: 0;
 			&:focus {
 				background-color: $bg;
 				color: $green;
@@ -90,10 +90,8 @@
 			}
 		}
 		button {
-			position: relative;
-			z-index: 100;
-			width: 36.07%;
-			height: 6.18rem;
+			width: 36%;
+			height: 100%;
 			border: 0.125rem solid $green;
 			border-left: none;
 			background-color: $green;
