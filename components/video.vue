@@ -1,7 +1,5 @@
 <template>
 	<div class="myVideo">
-		<div class="gradientTop" @click="show = !show"></div>
-
 		<img v-show="!show" src="@/assets/video/roadster.jpg" />
 		<video v-show="show" autoplay muted loop>
 			<source src="@/assets/video/Roadster.mp4" type="video/mp4" />
@@ -9,6 +7,7 @@
 		</video>
 
 		<div class="container">
+			<Header />
 			<h1>Your customers need <span>a website!</span></h1>
 			<button>
 				<img src="@/assets/img/blackBow.svg" />
@@ -16,13 +15,15 @@
 			</button>
 		</div>
 
-		<div class="gradientBottom" @click="show = !show"></div>
+		<div class="gradient" @click="show = !show"></div>
 	</div>
 </template>
 
 <script>
+	import Header from '../components/header'
 	export default {
 		name: 'Video',
+		components: { Header },
 		data() {
 			return {
 				show: false,
@@ -40,8 +41,7 @@
 		bottom: 0;
 		width: 100%;
 		height: 80vh;
-		.gradientTop,
-		.gradientBottom {
+		.gradient {
 			position: absolute;
 			z-index: 100;
 			left: 0;
@@ -51,11 +51,6 @@
 			display: block;
 			width: 100%;
 			height: 100%;
-		}
-		.gradientTop {
-			@include grayGradient(0deg);
-		}
-		.gradientBottom {
 			@include grayGradient(180deg);
 		}
 	}
@@ -81,13 +76,12 @@
 	}
 	.container {
 		position: relative;
-		top: 8.75rem;
 		z-index: 110;
 		@include container;
 
 		h1 {
 			width: 50%;
-			margin: 0 0 10px 0;
+			margin: 8.75rem 0 10px 0;
 			font-size: 5rem;
 			color: $white;
 			span {
