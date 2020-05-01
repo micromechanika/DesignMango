@@ -28,15 +28,15 @@
 
 <style scoped lang="scss">
 	.ourWorks {
-		margin: 9.3125em 0;
+		margin: 9.3125rem 0;
 		.message {
-			margin: 0 0 3em 0;
+			margin: 0 0 3rem 0;
 			width: 44%;
 			h2 {
 				font-weight: 500;
 				line-height: 130%;
 				color: $white;
-				font-size: 2.5em;
+				font-size: 2.5rem;
 				span {
 					color: $green;
 				}
@@ -59,20 +59,20 @@
 				background-color: $green;
 				p {
 					position: absolute;
-					left: 0.6em;
-					bottom: 0.6em;
+					left: 0.6rem;
+					bottom: 0.6rem;
 					color: $bg;
 					font-weight: 500;
-					font-size: 4em;
+					font-size: 4rem;
 					line-height: 130%;
 				}
 				img {
 					position: absolute;
 					margin: 0;
-					width: 2.8125em;
+					width: 2.8125rem;
 					height: auto;
-					top: 0.3125em;
-					right: 0.3125em;
+					top: 0.3125rem;
+					right: 0.3125rem;
 				}
 			}
 		}

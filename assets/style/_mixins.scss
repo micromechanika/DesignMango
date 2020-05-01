@@ -6,7 +6,7 @@
   user-select: none;
   box-sizing: border-box;
   cursor: pointer;
-  font-size: 1.25vmax;
+  word-wrap: break-word;
 }
 
 @mixin container {
@@ -28,6 +28,9 @@
   background: linear-gradient($deg, rgba(5, 4, 30, 0.15) 0%, rgba(0, 0, 0, 0.21) 20%,rgba(0, 0, 0, 0.11) 80%, $bg 100%);
 }
 
+html {
+  font-size: 0.7vw;
+}
 
 body{
   background-color: $bg;

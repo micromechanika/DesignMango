@@ -38,7 +38,7 @@
 		right: 0;
 		left: 0;
 		width: 100%;
-		height: 800px;
+		height: 100vh;
 		z-index: -100;
 		.gradientTop,
 		.gradientBottom {
@@ -75,37 +75,36 @@
 
 	.button {
 		position: absolute;
-		top: 37.5em;
+		top: 37.5rem;
 		z-index: 100;
-		width: 18.25em;
-		height: 6.18em;
+		width: 18.25rem;
+		height: 6.18rem;
 		background-color: $green;
 		p {
 			position: absolute;
-			left: 0.4625em;
-			bottom: 0.1375em;
+			left: 0.4625rem;
+			bottom: 0.1375rem;
 			color: $bg;
-			font-size: 1.875em;
+			font-size: 1.875rem;
 		}
 		img {
 			position: absolute;
 			margin: 0;
-			width: 1.4em;
+			width: 1.4rem;
 			height: auto;
-			top: 0.3125em;
-			right: 0.1875em;
+			top: 0.3125rem;
+			right: 0.1875rem;
 		}
 	}
 
 	.message {
 		position: absolute;
 		z-index: 100;
-		top: 14.5em;
+		top: 14.5rem;
 		width: 48.8%;
-		word-wrap: break-word;
 		h1 {
 			margin: 0;
-			font-size: 4em;
+			font-size: 4rem;
 			color: $white;
 			span {
 				color: $green;

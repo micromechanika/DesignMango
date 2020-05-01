@@ -47,18 +47,18 @@
 		align-items: center;
 	}
 	img {
-		width: 9.25em;
+		width: 9.25rem;
 		height: auto;
-		margin: 1.5em 0;
+		margin: 1.5rem 0;
 	}
 	nav {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
-		font-size: 1em;
-		line-height: 1.25em;
+		font-size: 1rem;
+		line-height: 1.25rem;
 		a {
-			margin: 0 1.875em;
+			margin: 0 1.875rem;
 			@include a;
 		}
 	}
@@ -69,28 +69,28 @@
 		align-content: space-between;
 		align-items: center;
 		.button {
-			margin: 0 2.5em 0 0;
+			margin: 0 2.5rem 0 0;
 			position: relative;
-			width: 5.625em;
-			height: 2.75em;
-			border: 0.125em solid $green;
+			width: 5.625rem;
+			height: 2.75rem;
+			border: 0.125rem solid $green;
 			p {
 				position: absolute;
-				left: 0.2375em;
-				bottom: 0.3625em;
+				left: 0.2375rem;
+				bottom: 0.3625rem;
 				color: $green;
 			}
 			img {
 				margin: 0;
-				width: 0.77em;
+				width: 0.77rem;
 				height: auto;
 				position: absolute;
-				top: 0.3125em;
-				right: 0.1875em;
+				top: 0.3125rem;
+				right: 0.1875rem;
 			}
 		}
 		.lang {
-			margin: 0 0 0 2.5em;
+			margin: 0 0 0 2.5rem;
 			color: $white;
 			text-transform: uppercase;
 			display: flex;
@@ -98,11 +98,11 @@
 			align-items: center;
 			justify-content: space-around;
 			p {
-				font-size: 0.875em;
-				margin: 0 0.3125em 0 0;
+				font-size: 0.875rem;
+				margin: 0 0.3125rem 0 0;
 			}
 			img {
-				width: 0.635em;
+				width: 0.635rem;
 				height: auto;
 			}
 		}

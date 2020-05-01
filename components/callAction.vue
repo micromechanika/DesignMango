@@ -38,17 +38,17 @@
 
 <style lang="scss" scoped>
 	.callAction {
-		margin: 12.56em 0;
+		margin: 12.56rem 0;
 	}
 	.action {
 		width: 44%;
-		margin: 0 0 6em 0;
+		margin: 0 0 6rem 0;
 		h2 {
 			font-weight: 500;
 			line-height: 130%;
 			word-wrap: break-word;
 			color: $white;
-			font-size: 2.5em;
+			font-size: 2.5rem;
 			span {
 				color: $green;
 			}
@@ -68,7 +68,7 @@
 		h4 {
 			margin: 0;
 			padding: 0;
-			font-size: 1.5em;
+			font-size: 1.5rem;
 			line-height: 130%;
 			text-transform: uppercase;
 		}
@@ -79,9 +79,9 @@
 			color: $white;
 		}
 		p {
-			margin: 2.875em 0 0 0;
-			line-height: 1.5em;
-			font-size: 1em;
+			margin: 2.875rem 0 0 0;
+			line-height: 1.5rem;
+			font-size: 1rem;
 			padding: 0;
 			color: $white;
 		}

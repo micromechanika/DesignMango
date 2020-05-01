@@ -29,7 +29,7 @@
 
 <style lang="scss" scoped>
 	.testSpeed {
-		margin: 15.5em 0 0 0;
+		margin: 15.5rem 0 0 0;
 		width: 100%;
 		display: flex;
 		flex-direction: row;
@@ -38,13 +38,13 @@
 	}
 	.action {
 		width: 44%;
-		margin: 0 1em 0 0;
+		margin: 0 1rem 0 0;
 		h2 {
 			font-weight: 500;
 			line-height: 130%;
 			word-wrap: break-word;
 			color: $white;
-			font-size: 2.5em;
+			font-size: 2.5rem;
 			span {
 				color: $green;
 			}
@@ -52,13 +52,13 @@
 	}
 	.message {
 		width: 44%;
-		margin: 0 0 0 1em;
-		font-size: 1.25em;
+		margin: 0 0 0 1rem;
+		font-size: 1.25rem;
 		line-height: 130%;
 		word-wrap: break-word;
 		color: $white;
 		p {
-			margin: 0 0 5em 0;
+			margin: 0 0 5rem 0;
 		}
 	}
 	.checkspeed {
@@ -73,10 +73,10 @@
 		input {
 			background-color: $bg;
 			width: 63.9%;
-			height: 6.18em;
-			border: 0.125em solid $green;
+			height: 6.18rem;
+			border: 0.125rem solid $green;
 			color: $green;
-			padding: 0 0 0 1.25em;
+			padding: 0 0 0 1.25rem;
 			&:focus {
 				background-color: $bg;
 				color: $green;
@@ -93,26 +93,26 @@
 			position: relative;
 			z-index: 100;
 			width: 36.07%;
-			height: 6.18em;
-			border: 0.125em solid $green;
+			height: 6.18rem;
+			border: 0.125rem solid $green;
 			border-left: none;
 			background-color: $green;
 			padding: 0;
 			margin: 0;
 			p {
 				position: absolute;
-				left: 0.1625em;
-				bottom: 0.1375em;
+				left: 0.1625rem;
+				bottom: 0.1375rem;
 				color: $bg;
-				font-size: 1.25em;
+				font-size: 1.25rem;
 			}
 			img {
 				position: absolute;
 				margin: 0;
-				width: 1.4em;
+				width: 1.4rem;
 				height: auto;
-				top: 0.3125em;
-				right: 0.1875em;
+				top: 0.3125rem;
+				right: 0.1875rem;
 			}
 		}
 	}

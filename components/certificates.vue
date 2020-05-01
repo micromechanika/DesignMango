@@ -37,14 +37,14 @@
 
 <style lang="scss" scoped>
 	.techonologiespanel {
-		margin: 2.68em 0 0 0;
+		margin: 2.68rem 0 0 0;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-around;
 		img {
 			width: auto;
-			height: 4em;
+			height: 4rem;
 		}
 	}
 </style>
