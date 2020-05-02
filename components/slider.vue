@@ -168,7 +168,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
-		margin: 0 0 10rem 0;
+		margin: 0 0 5rem 0;
 		color: $white;
 		h6 {
 			font-size: 1rem;
@@ -195,6 +195,7 @@
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: flex-start;
+		margin: 5rem 0 0 0;
 		article {
 			word-break: break-word;
 			width: 33.333333%;

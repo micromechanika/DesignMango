@@ -1,5 +1,5 @@
 <template>
-	<section @click="show = !show">
+	<div class="video" @click="show = !show">
 		<img v-show="!show" src="@/assets/video/roadster.jpg" />
 		<video v-show="show" autoplay preload="none" muted loop>
 			<source src="@/assets/video/Roadster.mp4" type="video/mp4" />
@@ -15,7 +15,7 @@
 		</div>
 
 		<div class="gradient"></div>
-	</section>
+	</div>
 </template>
 
 <script>
@@ -31,7 +31,7 @@
 </script>
 
 <style scoped lang="scss">
-	section {
+	.video {
 		width: 100%;
 		height: 80vh;
 		position: relative;

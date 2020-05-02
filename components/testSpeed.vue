@@ -1,5 +1,5 @@
 <template>
-	<article>
+	<div class="testSpeed">
 		<h2>Why is your bussines <span>need a website?</span></h2>
 		<section>
 			<p>
@@ -16,7 +16,7 @@
 				</button>
 			</form>
 		</section>
-	</article>
+	</div>
 </template>
 
 <script>
@@ -26,9 +26,10 @@
 </script>
 
 <style lang="scss" scoped>
-	article {
+	.testSpeed {
 		margin: 10rem auto;
 		width: 100%;
+		height: 30vh;
 		display: flex;
 		flex-direction: row;
 		align-items: flex-start;
@@ -36,6 +37,7 @@
 	}
 	h2 {
 		width: 50%;
+		height: 100%;
 		margin: 0 1rem 0 0;
 		font-weight: 500;
 		line-height: 130%;
@@ -47,6 +49,7 @@
 	}
 	section {
 		width: 50%;
+		height: 100%;
 		margin: 0 0 0 1rem;
 		font-size: 1.25rem;
 		line-height: 130%;

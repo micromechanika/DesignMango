@@ -1,14 +1,14 @@
 <template>
-	<article>
+	<div class="callAction">
 		<h2>Why are you need to work <span>with us?</span></h2>
 		<section>
-			<article v-for="(card, id) in cards" :key="id" class="cards">
+			<article v-for="(card, id) in cards" :key="id">
 				<h3>{{ card.h3 }}</h3>
 				<h4>{{ card.h4 }}</h4>
 				<p>{{ card.p }}</p>
 			</article>
 		</section>
-	</article>
+	</div>
 </template>
 
 <script>
@@ -35,8 +35,9 @@
 </script>
 
 <style lang="scss" scoped>
-	article {
+	.callAction {
 		margin: 12.56rem auto;
+		height: 30vh;
 	}
 
 	h2 {
@@ -58,9 +59,11 @@
 		justify-content: space-between;
 		align-items: flex-start;
 		width: 100%;
-		article .cards {
+		height: 100%;
+		article {
 			margin: 0 1rem;
 			width: 25%;
+			height: 80%;
 			h3,
 			h4 {
 				font-size: 1.5rem;

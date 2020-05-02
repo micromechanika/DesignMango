@@ -1,5 +1,5 @@
 <template>
-	<article>
+	<div class="ourWorks">
 		<h2>Our <span>works</span></h2>
 		<section>
 			<button>
@@ -16,7 +16,7 @@
 				<img src="../assets/img/works/3Work.png" />
 			</div>
 		</section>
-	</article>
+	</div>
 </template>
 
 <script>
@@ -26,7 +26,7 @@
 </script>
 
 <style scoped lang="scss">
-	article {
+	.ourWorks {
 		margin: 10rem auto;
 		width: 100%;
 		height: 50vh;
