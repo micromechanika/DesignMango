@@ -1,5 +1,5 @@
 <template>
-	<main>
+	<section>
 		<Header />
 		<Video />
 		<div class="container">
@@ -9,7 +9,7 @@
 			<OurWorks />
 			<Slider />
 		</div>
-	</main>
+	</section>
 </template>
 
 <script>
