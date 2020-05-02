@@ -1,9 +1,7 @@
 <template>
-	<div class="testSpeed">
-		<section class="action">
-			<h2>Why is your bussines <span>need a website?</span></h2>
-		</section>
-		<section class="message">
+	<article>
+		<h2>Why is your bussines <span>need a website?</span></h2>
+		<section>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna nec pulvinar praesent sed viverra quam malesuada et. Fusce enim, quis habitant
 				ut sed a non, ac non.
@@ -18,7 +16,7 @@
 				</button>
 			</form>
 		</section>
-	</div>
+	</article>
 </template>
 
 <script>
@@ -28,30 +26,27 @@
 </script>
 
 <style lang="scss" scoped>
-	.testSpeed {
-		margin: 15.5rem 0 0 0;
+	article {
+		margin: 10rem auto;
 		width: 100%;
 		display: flex;
 		flex-direction: row;
 		align-items: flex-start;
 		justify-content: space-between;
 	}
-	.action {
-		width: 44%;
+	h2 {
+		width: 50%;
 		margin: 0 1rem 0 0;
-		h2 {
-			font-weight: 500;
-			line-height: 130%;
-			word-wrap: break-word;
-			color: $white;
-			font-size: 2.5rem;
-			span {
-				color: $green;
-			}
+		font-weight: 500;
+		line-height: 130%;
+		color: $white;
+		font-size: 2.5rem;
+		span {
+			color: $green;
 		}
 	}
-	.message {
-		width: 44%;
+	section {
+		width: 50%;
 		margin: 0 0 0 1rem;
 		font-size: 1.25rem;
 		line-height: 130%;

@@ -1,23 +1,21 @@
 <template>
-	<div class="callAction">
-		<section class="action">
-			<h2>Why are you need to work <span>with us?</span></h2>
-		</section>
-		<div class="cards">
-			<article v-for="(item, id) in items" :key="id">
-				<h3>{{ item.h3 }}</h3>
-				<h4>{{ item.h4 }}</h4>
-				<p>{{ item.p }}</p>
+	<article>
+		<h2>Why are you need to work <span>with us?</span></h2>
+		<section>
+			<article class="cards" v-for="(card, id) in cards" :key="id">
+				<h3>{{ card.h3 }}</h3>
+				<h4>{{ card.h4 }}</h4>
+				<p>{{ card.p }}</p>
 			</article>
-		</div>
-	</div>
+		</section>
+	</article>
 </template>
 
 <script>
 	export default {
 		name: 'CallToAction',
 		props: {
-			items: {
+			cards: {
 				type: Array,
 				default() {
 					return [
@@ -37,53 +35,56 @@
 </script>
 
 <style lang="scss" scoped>
-	.callAction {
-		margin: 12.56rem 0;
+	article {
+		margin: 12.56rem auto;
 	}
-	.action {
-		width: 44%;
+
+	h2 {
+		display: block;
+		width: 50%;
 		margin: 0 0 6rem 0;
-		h2 {
-			font-weight: 500;
-			line-height: 130%;
-			word-wrap: break-word;
-			color: $white;
-			font-size: 2.5rem;
-			span {
-				color: $green;
-			}
+		font-weight: 500;
+		line-height: 130%;
+		word-wrap: break-word;
+		color: $white;
+		font-size: 2.5rem;
+		span {
+			color: $green;
 		}
 	}
-	.cards {
+	section {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: flex-start;
 		width: 100%;
-	}
-	article {
-		word-break: break-word;
-		width: 23%;
-		h3,
-		h4 {
-			margin: 0;
-			padding: 0;
-			font-size: 1.5rem;
-			line-height: 130%;
-			text-transform: uppercase;
-		}
-		h3 {
-			color: $green;
-		}
-		h4 {
-			color: $white;
-		}
-		p {
-			margin: 2.875rem 0 0 0;
-			line-height: 1.5rem;
-			font-size: 1rem;
-			padding: 0;
-			color: $white;
+		article .cards {
+			margin: 0 1rem;
+			width: 25%;
+			h3,
+			h4 {
+				font-size: 1.5rem;
+				line-height: 130%;
+				text-transform: uppercase;
+			}
+			h3 {
+				color: $green;
+			}
+			h4 {
+				color: $white;
+				margin: 0 0 2.875rem 0;
+			}
+			p {
+				line-height: 1.5rem;
+				font-size: 1rem;
+				color: $white;
+			}
+			&:first-of-type {
+				margin-left: 0;
+			}
+			&:last-of-type {
+				margin-right: 0;
+			}
 		}
 	}
 </style>
