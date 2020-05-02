@@ -28,6 +28,11 @@
   background: linear-gradient($deg, rgba(5, 4, 30, 0.15) 0%, $bg 100%);
 }
 
+*{
+  margin: 0;
+  padding: 0;
+}
+
 html {
   font-size: 0.8vw;
 }

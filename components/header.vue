@@ -1,5 +1,5 @@
 <template>
-	<header>
+	<header v-scroll="handleScroll">
 		<div class="container">
 			<nuxt-link to="/">
 				<img src="@/assets/img/logo.svg" />
@@ -38,6 +38,26 @@
 <script>
 	export default {
 		name: 'Header',
+		directives: {
+			scroll: {
+				inserted(el, binding) {
+					const f = function(evt) {
+						if (binding.value(evt, el)) {
+							window.removeEventListener('scroll', f)
+						}
+					}
+					window.addEventListener('scroll', f)
+				},
+			},
+		},
+		computed: {},
+		methods: {
+			handleScroll(evt, el) {
+				return window.scrollY >= 800
+					? el.setAttribute('style', 'background-color: #05041E; top:0; transition: top 1s;')
+					: el.setAttribute('style', 'background-color:transparent; top:1.5rem; transition: top 1s;')
+			},
+		},
 	}
 </script>
 
@@ -48,20 +68,18 @@
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		height: 3.5rem;
+		height: 5rem;
 	}
 	header {
 		position: fixed;
 		top: 1.5rem;
 		width: 100%;
-		height: 3.5rem;
 		z-index: 1200;
-		background-color: rgba(0, 0, 0, 0.36);
 	}
 	img {
 		width: 9.25rem;
 		height: auto;
-		margin: 1.5rem 0;
+		line-height: 0;
 	}
 	nav {
 		display: flex;
