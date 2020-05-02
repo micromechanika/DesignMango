@@ -2,7 +2,7 @@
 	<article>
 		<h2>Why are you need to work <span>with us?</span></h2>
 		<section>
-			<article class="cards" v-for="(card, id) in cards" :key="id">
+			<article v-for="(card, id) in cards" :key="id" class="cards">
 				<h3>{{ card.h3 }}</h3>
 				<h4>{{ card.h4 }}</h4>
 				<p>{{ card.p }}</p>
