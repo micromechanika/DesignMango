@@ -1,35 +1,37 @@
 <template>
 	<header>
-		<nuxt-link to="/">
-			<img src="@/assets/img/logo.svg" />
-		</nuxt-link>
-		<nav>
+		<div class="container">
 			<nuxt-link to="/">
-				<p>Web-design</p>
+				<img src="@/assets/img/logo.svg" />
 			</nuxt-link>
-			<nuxt-link to="/seo">
-				<p>SEO</p>
-			</nuxt-link>
-			<nuxt-link to="/marketing">
-				<p>Marketing</p>
-			</nuxt-link>
-			<nuxt-link to="/preise">
-				<p>Preise</p>
-			</nuxt-link>
-			<nuxt-link to="/referenzen">
-				<p>Referenzen</p>
-			</nuxt-link>
-		</nav>
-		<aside>
-			<div class="button">
-				<img src="@/assets/img/bow.svg" />
-				<p>Sign in</p>
-			</div>
-			<div class="lang">
-				<p>eng</p>
-				<img src="@/assets/img/mark.svg" />
-			</div>
-		</aside>
+			<nav>
+				<nuxt-link to="/">
+					<p>Web-design</p>
+				</nuxt-link>
+				<nuxt-link to="/seo">
+					<p>SEO</p>
+				</nuxt-link>
+				<nuxt-link to="/marketing">
+					<p>Marketing</p>
+				</nuxt-link>
+				<nuxt-link to="/preise">
+					<p>Preise</p>
+				</nuxt-link>
+				<nuxt-link to="/referenzen">
+					<p>Referenzen</p>
+				</nuxt-link>
+			</nav>
+			<aside>
+				<div class="button">
+					<img src="@/assets/img/bow.svg" />
+					<p>Sign in</p>
+				</div>
+				<div class="lang">
+					<p>eng</p>
+					<img src="@/assets/img/mark.svg" />
+				</div>
+			</aside>
+		</div>
 	</header>
 </template>
 
@@ -40,11 +42,21 @@
 </script>
 
 <style lang="scss" scoped>
-	header {
+	.container {
+		@include container;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+		height: 3.5rem;
+	}
+	header {
+		position: fixed;
+		top: 1.5rem;
+		width: 100%;
+		height: 3.5rem;
+		z-index: 1200;
+		background-color: rgba(0, 0, 0, 0.36);
 	}
 	img {
 		width: 9.25rem;

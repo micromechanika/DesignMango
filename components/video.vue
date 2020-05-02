@@ -1,13 +1,12 @@
 <template>
-	<div class="myVideo">
+	<div class="myVideo" @click="show = !show">
 		<img v-show="!show" src="@/assets/video/roadster.jpg" />
-		<video v-show="show" autoplay muted loop>
+		<video v-show="show" autoplay preload="none" muted loop>
 			<source src="@/assets/video/Roadster.mp4" type="video/mp4" />
 			please update you browser
 		</video>
 
 		<div class="container">
-			<Header />
 			<h1>Your customers need <span>a website!</span></h1>
 			<button>
 				<img src="@/assets/img/blackBow.svg" />
@@ -15,15 +14,14 @@
 			</button>
 		</div>
 
-		<div class="gradient" @click="show = !show"></div>
+		<div class="gradient"></div>
 	</div>
 </template>
 
 <script>
-	import Header from '../components/header'
 	export default {
 		name: 'Video',
-		components: { Header },
+
 		data() {
 			return {
 				show: false,
@@ -34,25 +32,20 @@
 
 <style scoped lang="scss">
 	.myVideo {
-		position: relative;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
 		width: 100%;
 		height: 80vh;
-		.gradient {
-			position: absolute;
-			z-index: 100;
-			left: 0;
-			top: 0;
-			bottom: 0;
-			right: 0;
-			display: block;
-			width: 100%;
-			height: 100%;
-			@include grayGradient(180deg);
-		}
+	}
+	.gradient {
+		position: absolute;
+		z-index: 100;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		@include grayGradient(180deg);
 	}
 	img {
 		position: absolute;
@@ -75,13 +68,14 @@
 		object-fit: cover;
 	}
 	.container {
+		top: 8.75rem;
 		position: relative;
 		z-index: 110;
 		@include container;
 
 		h1 {
 			width: 50%;
-			margin: 8.75rem 0 10px 0;
+			margin: 0 0 10px 0;
 			font-size: 5rem;
 			color: $white;
 			span {
