@@ -25,7 +25,7 @@
 	}
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 	.ourWorks {
 		margin: 10rem auto;
 		width: 100%;

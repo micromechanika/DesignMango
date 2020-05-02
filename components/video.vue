@@ -1,8 +1,8 @@
 <template>
 	<div class="video" @click="show = !show">
-		<img v-show="!show" src="@/assets/video/roadster.jpg" />
+		<img v-show="!show" src="@/assets/videos/roadster.jpg" />
 		<video v-show="show" autoplay preload="none" muted loop>
-			<source src="@/assets/video/Roadster.mp4" type="video/mp4" />
+			<source src="@/assets/videos/Roadster.mp4" type="video/mp4" />
 			please update you browser
 		</video>
 
@@ -30,7 +30,7 @@
 	}
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 	.video {
 		width: 100%;
 		height: 80vh;
