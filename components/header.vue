@@ -53,9 +53,9 @@
 		computed: {},
 		methods: {
 			handleScroll(evt, el) {
-				return window.scrollY >= 800
-					? el.setAttribute('style', 'background-color: #05041E; top:0; transition: top 1s;')
-					: el.setAttribute('style', 'background-color:transparent; top:1.5rem; transition: top 1s;')
+				return window.scrollY >= 400
+					? el.setAttribute('style', 'background-color: #05041E; top:0; transition: top; 1s;')
+					: el.setAttribute('style', 'background-color:transparent; top:1.5rem; transition: top; 1s;')
 			},
 		},
 	}
