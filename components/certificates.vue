@@ -1,7 +1,7 @@
 <template>
-	<div class="techonologiespanel">
+	<section>
 		<img v-for="(img, index) in techologiesImages" :key="index" :src="require(`@/assets/img/certificates/${img.src}`)" :alt="`${img.alt}`" />
-	</div>
+	</section>
 </template>
 
 <script>
@@ -36,8 +36,8 @@
 </script>
 
 <style lang="scss" scoped>
-	.techonologiespanel {
-		margin: 2.68rem 0 0 0;
+	section {
+		margin: 2rem auto;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
