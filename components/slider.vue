@@ -6,29 +6,27 @@
 				<span> {{ message.span }} </span>
 			</h2>
 		</div>
-		<div v-for="(slide, slideID) in sliders" :key="slideID" class="item">
+		<div v-for="(slide, slideID) in sliders" :key="slideID" class="sliders">
 			<img :src="require(`@/assets/img/slider/${slide.img.src}`)" :alt="`${slide.img.alt}`" />
 			<section>
-				<div class="container">
-					<div class="description">
-						<h6>{{ slide.description.h6 }}</h6>
-						<h2>{{ slide.description.h2 }}</h2>
-						<p>{{ slide.description.p }}</p>
-					</div>
-					<div class="cards">
-						<article v-for="(card, cardID) in slide.cards" :key="cardID">
-							<h3>{{ card.h3 }}</h3>
-							<h4>{{ card.h4 }}</h4>
-							<p>{{ card.p }}</p>
-						</article>
-					</div>
+				<div class="description">
+					<h6>{{ slide.description.h6 }}</h6>
+					<h2>{{ slide.description.h2 }}</h2>
+					<p>{{ slide.description.p }}</p>
+				</div>
+				<div class="cards">
+					<article v-for="(card, cardID) in slide.cards" :key="cardID">
+						<h3>{{ card.h3 }}</h3>
+						<h4>{{ card.h4 }}</h4>
+						<p>{{ card.p }}</p>
+					</article>
 				</div>
 			</section>
 		</div>
-		<asside>
+		<aside>
 			<img src="../assets/img/pointerLeft.svg" alt="leftPointer" />
 			<img src="../assets/img/pointerRight.svg" alt="rightPointer" />
-		</asside>
+		</aside>
 	</div>
 </template>
 
@@ -100,12 +98,12 @@
 
 <style lang="scss" scoped>
 	.slider {
+		margin: 12.5rem auto;
 		position: relative;
 		width: 100%;
-		height: 50rem;
-		margin: 12.5rem 0;
+		height: 80vh;
 	}
-	asside {
+	aside {
 		position: absolute;
 		right: -0.5rem;
 		bottom: 2rem;
@@ -142,7 +140,7 @@
 			}
 		}
 	}
-	.item {
+	.sliders {
 		width: 100%;
 		height: 100%;
 		display: flex;
@@ -150,25 +148,28 @@
 		align-items: center;
 		justify-content: center;
 		img {
-			width: 33.75%;
+			width: 34%;
 			height: 100%;
 			object-fit: cover;
 		}
 		section {
-			width: 66.25%;
+			width: 66%;
 			height: 100%;
+			margin: 0 5vw;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
 		}
 	}
-	.container {
-		width: 66.79%;
-		margin: 0 auto;
-	}
 	.description {
+		width: 100%;
+		height: 50%;
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-start;
+		justify-content: flex-end;
+		margin: 0 0 10rem 0;
 		color: $white;
-		margin: 3.28rem 0;
 		h6 {
 			font-size: 1rem;
 			line-height: 1.5rem;
@@ -183,10 +184,12 @@
 		p {
 			font-size: 1.25rem;
 			line-height: 130%;
+			margin: 0;
 		}
 	}
 	.cards {
-		margin: 3.28rem 0;
+		width: 100%;
+		height: 50%;
 		color: $white;
 		display: flex;
 		flex-direction: row;
@@ -194,7 +197,9 @@
 		align-items: flex-start;
 		article {
 			word-break: break-word;
-			width: 30%;
+			width: 33.333333%;
+			height: 100%;
+			margin: 0 2rem;
 			h3 {
 				font-size: 1.5rem;
 				line-height: 130%;
@@ -210,6 +215,12 @@
 			p {
 				font-size: 1rem;
 				line-height: 1.5rem;
+			}
+			&:first-of-type {
+				margin-left: 0;
+			}
+			&:last-of-type {
+				margin-right: 0;
 			}
 		}
 	}
