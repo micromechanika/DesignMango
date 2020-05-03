@@ -35,21 +35,21 @@ module.exports = {
 		html: {
 			minify: {
 				collapseBooleanAttributes: true,
-				collapseWhitespace: false,
+				collapseWhitespace: true,
 				decodeEntities: true,
 				minifyCSS: true,
 				minifyJS: true,
 				processConditionalComments: true,
-				removeAttributeQuotes: false,
+				removeAttributeQuotes: true,
 				removeComments: true,
 				removeEmptyAttributes: true,
 				removeOptionalTags: true,
 				removeRedundantAttributes: true,
-				removeScriptTypeAttributes: false,
-				removeStyleLinkTypeAttributes: false,
+				removeScriptTypeAttributes: true,
+				removeStyleLinkTypeAttributes: true,
 				removeTagWhitespace: true,
 				sortAttributes: true,
-				sortClassName: false,
+				sortClassName: true,
 				trimCustomFragments: true,
 				useShortDoctype: true,
 			},
@@ -97,7 +97,7 @@ module.exports = {
 		order: 'cssnanoLast',
 	},
 	loading: false,
-	css: ['normalize.css'],
+	css: ['normalize.css', '@/assets/style/main.scss'],
 	plugins: [],
 	buildModules: [
 		// Doc: https://github.com/nuxt-community/eslint-module
@@ -114,7 +114,7 @@ module.exports = {
 		'nuxt-webfontloader',
 	],
 	styleResources: {
-		scss: ['./assets/style/_loadStyles.scss'],
+		scss: ['@/assets/style/main.scss'],
 	},
 	axios: {},
 	filenames: {
