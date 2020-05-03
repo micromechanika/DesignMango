@@ -18,9 +18,6 @@ module.exports = {
 			n.close()
 		},
 	},
-	/*
-	 ** Headers of the page
-	 */
 	head: {
 		htmlAttrs: {
 			lang: 'en',
@@ -31,10 +28,7 @@ module.exports = {
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
 			{ hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
 		],
-		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-			{ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Poppins&display=swap' },
-		],
+		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
 	},
 	rootDir: __dirname,
 	...(!isDev && {
@@ -47,13 +41,13 @@ module.exports = {
 				minifyJS: true,
 				processConditionalComments: true,
 				removeAttributeQuotes: false,
-				removeComments: false,
+				removeComments: true,
 				removeEmptyAttributes: true,
 				removeOptionalTags: true,
 				removeRedundantAttributes: true,
 				removeScriptTypeAttributes: false,
 				removeStyleLinkTypeAttributes: false,
-				removeTagWhitespace: false,
+				removeTagWhitespace: true,
 				sortAttributes: true,
 				sortClassName: false,
 				trimCustomFragments: true,
@@ -102,28 +96,13 @@ module.exports = {
 
 		order: 'cssnanoLast',
 	},
-	/*
-	 ** Customize the progress-bar color
-	 */
 	loading: false,
-	/*
-	 ** Global CSS
-	 */
 	css: ['normalize.css'],
-	/*
-	 ** Plugins to load before mounting the App
-	 */
 	plugins: [],
-	/*
-	 ** Nuxt.js dev-modules
-	 */
 	buildModules: [
 		// Doc: https://github.com/nuxt-community/eslint-module
 		'@nuxtjs/eslint-module',
 	],
-	/*
-	 ** Nuxt.js modules
-	 */
 	modules: [
 		// Doc: https://axios.nuxtjs.org/usage
 		'@nuxtjs/axios',
@@ -137,24 +116,7 @@ module.exports = {
 	styleResources: {
 		scss: ['./assets/style/_loadStyles.scss'],
 	},
-	/*
-	 ** Axios module configuration
-	 ** See https://axios.nuxtjs.org/options
-	 */
 	axios: {},
-	render: {
-		// http2: {
-		//     push: true,
-		//     pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
-		//     .map(f => `<${publicPath}${f.file}>; rel=preload; as=${f.asType}`)
-		//   },
-		// compressor: false,
-		resourceHints: false,
-		etag: false,
-		static: {
-			etag: false,
-		},
-	},
 	filenames: {
 		app: ({ isDev }) => (isDev ? '[name].js' : 'js/[contenthash].js'),
 		chunk: ({ isDev }) => (isDev ? '[name].js' : 'js/[contenthash].js'),
@@ -163,9 +125,6 @@ module.exports = {
 		font: ({ isDev }) => (isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]'),
 		video: ({ isDev }) => (isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'),
 	},
-	/*
-	 ** Build configuration
-	 */
 	build: {
 		/*
 		 ** You can extend webpack config here
