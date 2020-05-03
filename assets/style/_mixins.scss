@@ -1,44 +1,26 @@
-@mixin font {
-  font-family: "Poppins", sans-serif;
-}
-
 @mixin baseProps {
-  user-select: none;
-  box-sizing: border-box;
-  cursor: pointer;
-  word-wrap: break-word;
+	user-select: none;
+	box-sizing: border-box;
+	cursor: pointer;
+	word-wrap: break-word;
 }
 
 @mixin container {
-  min-width: 300px;
-  max-width: 1024px;
-  margin: 0 auto;
+	min-width: 300px;
+	max-width: 1024px;
+	margin: 0 auto;
 }
 
 @mixin a {
-  color: $white;
-  text-decoration: none;
+	color: $white;
+	text-decoration: none;
 }
 
 @mixin greenGradient {
-  background: linear-gradient(180deg, $green 0%, rgba(37, 229, 126, 0.19) 100%);
+	background: linear-gradient(180deg, $green 0%, rgba(37, 229, 126, 0.19) 100%);
 }
 
-@mixin grayGradient ($deg){
-  background: linear-gradient($deg, rgba(5, 4, 30, 0.15) 0%, $bg 100%);
+@mixin grayGradient($deg) {
+	background: linear-gradient($deg, rgba(5, 4, 30, 0.15) 0%, $bg 100%);
 }
 
-*{
-  margin: 0;
-  padding: 0;
-  @include baseProps;
-  @include font;
-}
-
-html {
-  font-size: 0.8vw;
-}
-
-body{
-  background-color: $bg;
-}
