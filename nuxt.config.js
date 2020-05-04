@@ -17,7 +17,10 @@ module.exports = {
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
 			{ hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
 		],
-		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+		link: [
+			{ rel: 'canonical', href: process.env.BASE_URL },
+			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+		],
 	},
 	rootDir: __dirname,
 	loading: false,
@@ -104,35 +107,34 @@ module.exports = {
 			chunk: 'all',
 		},
 		extend(config, ctx) {
-			if (ctx.isDev) {
-				config.plugins.push(
-					new ImageminPlugin({
-						pngquant: {
-							quality: '5-30',
-							speed: 7,
-							strip: true,
-						},
-						jpegtran: {
-							progressive: true,
-						},
-						gifsicle: {
-							interlaced: true,
-						},
-						plugins: [
-							imageminMozjpeg({
-								quality: 70,
-								progressive: true,
-							}),
-						],
-					})
-				)
-				config.module.rules.push({
-					enforce: 'pre',
-					test: /\.(js|vue)$/,
-					loader: 'eslint-loader',
-					exclude: /(node_modules)/,
-				})
-			}
+			const imageMinPlugin = new ImageminPlugin({
+				pngquant: {
+					quality: '5-30',
+					speed: 7,
+					strip: true,
+				},
+				jpegtran: {
+					progressive: true,
+				},
+				gifsicle: {
+					interlaced: true,
+				},
+				plugins: [
+					imageminMozjpeg({
+						quality: 70,
+						progressive: true,
+					}),
+				],
+			})
+
+			if (!ctx.isDev) config.plugins.push(imageMinPlugin)
+
+			config.module.rules.push({
+				enforce: 'pre',
+				test: /\.(js|vue)$/,
+				loader: 'eslint-loader',
+				exclude: /(node_modules)/,
+			})
 		},
 	},
 	router: {
