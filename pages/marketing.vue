@@ -1,14 +1,9 @@
 <template>
-	<section>
-		<Header />
-	</section>
+	<section> </section>
 </template>
 
 <script>
-	import Header from '../components/header'
-	export default {
-		components: { Header },
-	}
+	export default {}
 </script>
 
 <style lang="scss">
