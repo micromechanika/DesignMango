@@ -1,9 +1,8 @@
 <template>
 	<div class="video" @click="show = !show">
 		<picture v-show="!show">
-			<source media="(min-width: 650px)" srcset="img_pink_flowers.jpg" />
-			<source media="(min-width: 465px)" srcset="img_white_flower.jpg" />
-			<img v-show="!show" :src="require(`@/assets/videos/${picture.src}`)" :alt="`${picture.alt}`" />
+			<source v-show="!show" :srcset="require(`@/assets/videos/${changPicture.src}`)" />
+			<img v-show="!show" :src="require(`@/assets/videos/${changPicture.src}`)" :alt="require(`@/assets/videos/${changPicture.alt}`)" />
 		</picture>
 
 		<video v-show="show" autoplay preload="none" muted loop>
@@ -24,19 +23,12 @@
 <script>
 	export default {
 		name: 'Video',
-		directives: {
-			screenWidth: {
-				componentUpdated(el) {
-					return Math.max(window.innerWidth, window.screen.width)
-				},
-			},
-		},
 		props: {
 			picture: {
 				type: Object,
 				default() {
 					return {
-						MAX: { src: 'roadsterMAX.jpg', alt: 'roadsterMAX' },
+						'3840': { src: 'roadster3840.jpg', alt: 'roadster3840' },
 						'1600': { src: 'roadster1600.jpg', alt: 'roadster1600' },
 						'1440': { src: 'roadster1440.jpg', alt: 'roadster1440' },
 						'1024': { src: 'roadster1024.jpg', alt: 'roadster1024' },
@@ -50,27 +42,40 @@
 		data() {
 			return {
 				show: false,
+				window: {
+					width: 0,
+					height: 0,
+				},
 			}
 		},
+		beforeMount() {
+			window.addEventListener('resize', this.handleResize)
+			this.handleResize()
+		},
+		destroyed() {
+			window.removeEventListener('resize', this.handleResize)
+		},
 		methods: {
-			changPicture(el) {
-				const w = Math.max(window.innerWidth, window.screen.width)
-				const insertImg = src => el.setAttribute('style', `background-image: ${src};`)
-				switch (true) {
-					case w >= 3000:
-						return insertImg(this.picture.MAX.src)
-					case w >= 1440:
-						return insertImg(this.picture['1600'].src)
-					case w >= 1024:
-						return insertImg(this.picture['1440'].src)
-					case w >= 800:
-						return insertImg(this.picture['1024'].src)
-					case w >= 700:
-						return insertImg(this.picture['800'].src)
-					case w >= 400:
-						return insertImg(this.picture['700'].src)
+			handleResize() {
+				this.window.width = window.innerWidth
+				this.window.height = window.innerHeight
+			},
+			changPicture() {
+				switch (this.window.width) {
+					case 3000:
+						return this.picture['3840']
+					case 1440:
+						return this.picture['1600']
+					case 1024:
+						return this.picture['1440']
+					case 800:
+						return this.picture['1024']
+					case 700:
+						return this.picture['800']
+					case 400:
+						return this.picture['700']
 					default:
-						return insertImg(this.picture['400'].src)
+						return this.picture['400']
 				}
 			},
 		},
@@ -95,6 +100,8 @@
 		height: 100%;
 		@include grayGradient(180deg);
 	}
+	picture,
+	source,
 	img {
 		position: absolute;
 		top: 0;
