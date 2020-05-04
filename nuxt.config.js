@@ -40,8 +40,8 @@ module.exports = {
 		scss: ['@/assets/style/main.scss'],
 	},
 	plugins: [],
-	buildModules: ['@nuxtjs/eslint-module'],
-	modules: ['@nuxtjs/axios', '@nuxtjs/dotenv', '@nuxtjs/style-resources', 'nuxt-trailingslash-module'],
+	buildModules: ['@nuxtjs/eslint-module', 'nuxt-purgecss', '@nuxtjs/google-analytics'],
+	modules: ['@nuxtjs/axios', '@nuxtjs/dotenv', '@nuxtjs/style-resources', 'nuxt-trailingslash-module', '@nuxtjs/sitemap', '@nuxtjs/robots'],
 	axios: {},
 	build: {
 		optimizeCss: false,
@@ -143,5 +143,17 @@ module.exports = {
 	},
 	env: {
 		BASE_URL: process.env.BASE_URL || 'http://localhost:3000',
+	},
+	googleAnalytics: {
+		id: process.env.GOOGLE_ANALYTICS_ID,
+	},
+	sitemap: {
+		hostname: 'https://example.com',
+		gzip: true,
+		exclude: ['/admin/**'],
+	},
+	robots: {
+		UserAgent: '*',
+		Disallow: '/',
 	},
 }
