@@ -7,17 +7,6 @@ module.exports = {
 	...(!isDev && {
 		modern: 'client',
 	}),
-	cache: {
-		max: 0,
-		maxAge: 8.64e8,
-		updateAgeOnGet: true,
-		length(n, key) {
-			return n * 2 + key.length
-		},
-		dispose(key, n) {
-			n.close()
-		},
-	},
 	head: {
 		htmlAttrs: {
 			lang: 'en',
@@ -31,111 +20,112 @@ module.exports = {
 		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
 	},
 	rootDir: __dirname,
-	...(!isDev && {
-		html: {
-			minify: {
-				collapseBooleanAttributes: true,
-				collapseWhitespace: true,
-				decodeEntities: true,
-				minifyCSS: true,
-				minifyJS: true,
-				processConditionalComments: true,
-				removeAttributeQuotes: true,
-				removeComments: true,
-				removeEmptyAttributes: true,
-				removeOptionalTags: true,
-				removeRedundantAttributes: true,
-				removeScriptTypeAttributes: true,
-				removeStyleLinkTypeAttributes: true,
-				removeTagWhitespace: true,
-				sortAttributes: true,
-				sortClassName: true,
-				trimCustomFragments: true,
-				useShortDoctype: true,
-			},
-		},
-	}),
-	optimization: {
-		minimize: !isDev,
-		splitChunks: {
-			chunk: 'all',
-		},
-	},
-	...(!isDev && {
-		extractCSS: {
-			ignoreOrder: false,
-		},
-	}),
-	transpile: ['vue-lazy-hydration', 'intersection-observer'],
-	postcss: {
-		plugins: {
-			...(!isDev && {
-				cssnano: {
-					preset: [
-						'advanced',
-						{
-							autoprefixer: false,
-							cssDeclarationSorter: false,
-							zindex: false,
-							discardComments: {
-								removeAll: true,
-							},
-						},
-					],
-				},
-			}),
-		},
-		...(!isDev && {
-			preset: {
-				browsers: 'cover 99.5%',
-				autoprefixer: true,
-			},
-		}),
-
-		order: 'cssnanoLast',
-	},
 	loading: false,
+	cache: {
+		max: 0,
+		maxAge: 8.64e8,
+		updateAgeOnGet: true,
+		length(n, key) {
+			return n * 2 + key.length
+		},
+		dispose(key, n) {
+			n.close()
+		},
+	},
 	css: ['normalize.css', '@/assets/style/main.scss'],
-	plugins: [],
-	buildModules: ['@nuxtjs/eslint-module'],
-	modules: ['@nuxtjs/axios', '@nuxtjs/dotenv', '@nuxtjs/style-resources', 'nuxt-trailingslash-module', 'nuxt-webfontloader'],
 	styleResources: {
 		scss: ['@/assets/style/main.scss'],
 	},
+	plugins: [],
+	buildModules: ['@nuxtjs/eslint-module'],
+	modules: ['@nuxtjs/axios', '@nuxtjs/dotenv', '@nuxtjs/style-resources', 'nuxt-trailingslash-module'],
 	axios: {},
-	filenames: {
-		app: ({ isDev }) => (isDev ? '[name].js' : 'js/[contenthash].js'),
-		chunk: ({ isDev }) => (isDev ? '[name].js' : 'js/[contenthash].js'),
-		css: ({ isDev }) => (isDev ? '[name].css' : 'css/[contenthash].css'),
-		img: ({ isDev }) => (isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]'),
-		font: ({ isDev }) => (isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]'),
-		video: ({ isDev }) => (isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'),
-	},
 	build: {
+		optimizeCss: false,
+		filenames: {
+			app: ({ isDev }) => (isDev ? '[name].js' : 'js/[contenthash].js'),
+			chunk: ({ isDev }) => (isDev ? '[name].js' : 'js/[contenthash].js'),
+			css: ({ isDev }) => (isDev ? '[name].css' : 'css/[contenthash].css'),
+			img: ({ isDev }) => (isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]'),
+			font: ({ isDev }) => (isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]'),
+			video: ({ isDev }) => (isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'),
+		},
+		...(!isDev && {
+			html: {
+				minify: {
+					collapseBooleanAttributes: true,
+					decodeEntities: true,
+					minifyCSS: true,
+					minifyJS: true,
+					processConditionalComments: true,
+					removeEmptyAttributes: true,
+					removeRedundantAttributes: true,
+					trimCustomFragments: true,
+					useShortDoctype: true,
+				},
+			},
+		}),
+		...(!isDev && {
+			extractCSS: {
+				ignoreOrder: true,
+			},
+		}),
+		postcss: {
+			plugins: {
+				...(!isDev && {
+					cssnano: {
+						preset: [
+							'advanced',
+							{
+								autoprefixer: false,
+								cssDeclarationSorter: false,
+								zindex: false,
+								discardComments: {
+									removeAll: true,
+								},
+							},
+						],
+					},
+				}),
+			},
+			...(!isDev && {
+				preset: {
+					browsers: 'cover 99.5%',
+					autoprefixer: true,
+				},
+			}),
+			order: 'cssnanoLast',
+		},
+		transpile: ['vue-lazy-hydration', 'intersection-observer'],
+		optimization: {
+			minimize: !isDev,
+		},
+		splitChunks: {
+			chunk: 'all',
+		},
 		extend(config, ctx) {
-			const imageMinPlugin = new ImageminPlugin({
-				pngquant: {
-					quality: '5-30',
-					speed: 7,
-					strip: true,
-				},
-				jpegtran: {
-					progressive: true,
-				},
-				gifsicle: {
-					interlaced: true,
-				},
-				plugins: [
-					imageminMozjpeg({
-						quality: 70,
-						progressive: true,
-					}),
-				],
-			})
-
-			if (ctx.isDev) config.plugins.push(imageMinPlugin)
-
-			if (ctx.isDev && ctx.isClient) {
+			if (ctx.isDev) {
+				config.plugins.push(
+					new ImageminPlugin({
+						pngquant: {
+							quality: '5-30',
+							speed: 7,
+							strip: true,
+						},
+						jpegtran: {
+							progressive: true,
+						},
+						gifsicle: {
+							interlaced: true,
+						},
+						plugins: [
+							imageminMozjpeg({
+								quality: 70,
+								progressive: true,
+							}),
+						],
+					})
+				)
 				config.module.rules.push({
 					enforce: 'pre',
 					test: /\.(js|vue)$/,
