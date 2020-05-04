@@ -1,11 +1,15 @@
 <template>
 	<div class="video" @click="show = !show">
-		<img v-show="!show" src="@/assets/videos/roadster.jpg" />
+		<picture v-show="!show">
+			<source media="(min-width: 650px)" srcset="img_pink_flowers.jpg" />
+			<source media="(min-width: 465px)" srcset="img_white_flower.jpg" />
+			<img v-show="!show" :src="require(`@/assets/videos/${picture.src}`)" :alt="`${picture.alt}`" />
+		</picture>
+
 		<video v-show="show" autoplay preload="none" muted loop>
 			<source src="@/assets/videos/Roadster.mp4" type="video/mp4" />
 			please update you browser
 		</video>
-
 		<div class="container">
 			<h1>Your customers need <span>a website!</span></h1>
 			<button>
@@ -13,7 +17,6 @@
 				<p>Get Started</p>
 			</button>
 		</div>
-
 		<div class="gradient"></div>
 	</div>
 </template>
@@ -21,11 +24,55 @@
 <script>
 	export default {
 		name: 'Video',
-
+		directives: {
+			screenWidth: {
+				componentUpdated(el) {
+					return Math.max(window.innerWidth, window.screen.width)
+				},
+			},
+		},
+		props: {
+			picture: {
+				type: Object,
+				default() {
+					return {
+						MAX: { src: 'roadsterMAX.jpg', alt: 'roadsterMAX' },
+						'1600': { src: 'roadster1600.jpg', alt: 'roadster1600' },
+						'1440': { src: 'roadster1440.jpg', alt: 'roadster1440' },
+						'1024': { src: 'roadster1024.jpg', alt: 'roadster1024' },
+						'800': { src: 'roadster800.jpg', alt: 'roadster800' },
+						'700': { src: 'roadster700.jpg', alt: 'roadster700' },
+						'400': { src: 'roadster400.jpg', alt: 'roadster400' },
+					}
+				},
+			},
+		},
 		data() {
 			return {
 				show: false,
 			}
+		},
+		methods: {
+			changPicture(el) {
+				const w = Math.max(window.innerWidth, window.screen.width)
+				const insertImg = src => el.setAttribute('style', `background-image: ${src};`)
+				switch (true) {
+					case w >= 3000:
+						return insertImg(this.picture.MAX.src)
+					case w >= 1440:
+						return insertImg(this.picture['1600'].src)
+					case w >= 1024:
+						return insertImg(this.picture['1440'].src)
+					case w >= 800:
+						return insertImg(this.picture['1024'].src)
+					case w >= 700:
+						return insertImg(this.picture['800'].src)
+					case w >= 400:
+						return insertImg(this.picture['700'].src)
+					default:
+						return insertImg(this.picture['400'].src)
+				}
+			},
 		},
 	}
 </script>
