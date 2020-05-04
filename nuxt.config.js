@@ -55,13 +55,11 @@ module.exports = {
 			},
 		},
 	}),
-	splitChunks: {
-		layouts: true,
-		pages: true,
-		commons: true,
-	},
 	optimization: {
 		minimize: !isDev,
+		splitChunks: {
+			chunk: 'all',
+		},
 	},
 	...(!isDev && {
 		extractCSS: {
@@ -99,20 +97,8 @@ module.exports = {
 	loading: false,
 	css: ['normalize.css', '@/assets/style/main.scss'],
 	plugins: [],
-	buildModules: [
-		// Doc: https://github.com/nuxt-community/eslint-module
-		'@nuxtjs/eslint-module',
-	],
-	modules: [
-		// Doc: https://axios.nuxtjs.org/usage
-		'@nuxtjs/axios',
-		// Doc: https://github.com/nuxt-community/dotenv-module
-		'@nuxtjs/dotenv',
-		// https://github.com/nuxt-community/style-resources-module
-		'@nuxtjs/style-resources',
-		'nuxt-trailingslash-module',
-		'nuxt-webfontloader',
-	],
+	buildModules: ['@nuxtjs/eslint-module'],
+	modules: ['@nuxtjs/axios', '@nuxtjs/dotenv', '@nuxtjs/style-resources', 'nuxt-trailingslash-module', 'nuxt-webfontloader'],
 	styleResources: {
 		scss: ['@/assets/style/main.scss'],
 	},
@@ -126,19 +112,7 @@ module.exports = {
 		video: ({ isDev }) => (isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'),
 	},
 	build: {
-		/*
-		 ** You can extend webpack config here
-		 */
 		extend(config, ctx) {
-			const ORIGINAL_TEST = '/\\.(png|jpe?g|gif|svg|webp)$/gi'
-			const vueSvgLoader = [
-				{
-					loader: 'vue-svg-loader',
-					options: {
-						svgo: false,
-					},
-				},
-			]
 			const imageMinPlugin = new ImageminPlugin({
 				pngquant: {
 					quality: '5-30',
@@ -159,45 +133,8 @@ module.exports = {
 				],
 			})
 
-			if (!ctx.isDev) config.plugins.push(imageMinPlugin)
+			if (ctx.isDev) config.plugins.push(imageMinPlugin)
 
-			config.module.rules.forEach(rule => {
-				if (rule.test.toString() === ORIGINAL_TEST) {
-					rule.test = /\.(png|jpe?g|gif|webp)$/gi
-					rule.use = [
-						{
-							loader: 'url-loader',
-							options: {
-								limit: 1000,
-								name: ctx.isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]',
-							},
-						},
-					]
-				}
-			})
-
-			const svgRule = {
-				test: /\.svg$/,
-				oneOf: [
-					{
-						resourceQuery: /inline/,
-						use: vueSvgLoader,
-					},
-					{
-						resourceQuery: /data/,
-						loader: 'url-loader',
-					},
-					{
-						resourceQuery: /raw/,
-						loader: 'raw-loader',
-					},
-					{
-						loader: 'file-loader', // By default, always use file-loader
-					},
-				],
-			}
-
-			config.module.rules.push(svgRule)
 			if (ctx.isDev && ctx.isClient) {
 				config.module.rules.push({
 					enforce: 'pre',
