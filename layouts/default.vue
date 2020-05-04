@@ -5,7 +5,7 @@
 	</div>
 </template>
 <script>
-	import Header from '../components/header'
+	import Header from '../components/constLayouts/header'
 	export default {
 		components: { Header },
 	}

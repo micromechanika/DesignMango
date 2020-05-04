@@ -12,12 +12,12 @@
 </template>
 
 <script>
-	import Video from '../components/video'
-	import Certificates from '../components/certificates'
-	import TestSpeed from '../components/testSpeed'
-	import CallAction from '../components/callAction'
-	import OurWorks from '../components/ourWorks'
-	import Slider from '../components/slider'
+	import Video from '../components/index/video'
+	import Certificates from '../components/index/certificates'
+	import TestSpeed from '../components/index/testSpeed'
+	import CallAction from '../components/index/callAction'
+	import OurWorks from '../components/index/ourWorks'
+	import Slider from '../components/index/slider'
 	export default {
 		components: { Video, Certificates, TestSpeed, CallAction, OurWorks, Slider },
 	}

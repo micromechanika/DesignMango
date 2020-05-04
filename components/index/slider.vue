@@ -24,8 +24,8 @@
 			</section>
 		</div>
 		<aside>
-			<img src="../assets/img/pointerLeft.svg" alt="leftPointer" />
-			<img src="../assets/img/pointerRight.svg" alt="rightPointer" />
+			<img src="../../assets/img/pointerLeft.svg" alt="leftPointer" />
+			<img src="../../assets/img/pointerRight.svg" alt="rightPointer" />
 		</aside>
 	</div>
 </template>
