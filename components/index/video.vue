@@ -96,6 +96,10 @@
 		height: 100%;
 		@include grayGradient(180deg);
 	}
+	figure {
+		background-size: contain;
+		background-position: center;
+	}
 	figure,
 	source,
 	img,
