@@ -12,13 +12,13 @@
 				type: Object,
 				default() {
 					return {
-						'3840': { src: 'videos/roadster3840.jpg', alt: 'roadster3840' },
-						'1600': { src: 'videos/roadster1600.jpg', alt: 'roadster1600' },
-						'1440': { src: 'videos/roadster1440.jpg', alt: 'roadster1440' },
-						'1024': { src: 'videos/roadster1024.jpg', alt: 'roadster1024' },
-						'800': { src: 'videos/roadster800.jpg', alt: 'roadster800' },
-						'700': { src: 'videos/roadster700.jpg', alt: 'roadster700' },
-						'400': { src: 'videos/roadster400.jpg', alt: 'roadster400' },
+						'3840': { src: 'img/videos/roadster3840.jpg', alt: 'roadster3840' },
+						'1600': { src: 'img/videos/roadster1600.jpg', alt: 'roadster1600' },
+						'1440': { src: 'img/videos/roadster1440.jpg', alt: 'roadster1440' },
+						'1024': { src: 'img/videos/roadster1024.jpg', alt: 'roadster1024' },
+						'800': { src: 'img/videos/roadster800.jpg', alt: 'roadster800' },
+						'700': { src: 'img/videos/roadster700.jpg', alt: 'roadster700' },
+						'400': { src: 'img/videos/roadster400.jpg', alt: 'roadster400' },
 					}
 				},
 			},

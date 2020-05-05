@@ -10,10 +10,10 @@
 				</div>
 			</button>
 			<div class="examples">
-				<img src="../../assets/img/works/2Work.png" />
-				<img src="../../assets/img/works/3Work.png" />
-				<img src="../../assets/img/works/2Work.png" />
-				<img src="../../assets/img/works/3Work.png" />
+				<img src="../../static/img/works/2Work.png" />
+				<img src="../../static/img/works/3Work.png" />
+				<img src="../../static/img/works/2Work.png" />
+				<img src="../../static/img/works/3Work.png" />
 			</div>
 		</section>
 	</div>
