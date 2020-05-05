@@ -1,7 +1,13 @@
 <template>
-	<div class="video" @click="show = !show">
-		<figure v-show="!show" :style="{ backgroundSize: '100% 100%', backgroundImage: 'url(videos/roadster400.jpg);' }">
-			<img :src="`videos/${changPicture.src}`" :srcset="`videos/${changPicture.src}`" :alt="`videos/${changPicture.alt}`" />
+	<div class="video">
+		<figure @click="show = !show" v-show="!show" :style="{ backgroundSize: '100% 100%', backgroundImage: 'url(videos/roadster400.jpg);' }">
+			<img
+				@click="show = !show"
+				v-show="!show"
+				:src="`videos/${changPicture.src}`"
+				:srcset="`videos/${changPicture.src}`"
+				:alt="`videos/${changPicture.alt}`"
+			/>
 		</figure>
 
 		<video v-show="show" autoplay preload="none" muted loop>
@@ -25,11 +31,10 @@
 		props: {},
 		data() {
 			return {
-				show: false,
 				window: {
 					width: 0,
-					height: 0,
 				},
+				show: false,
 				picture: {
 					'3840': { src: 'roadster3840.jpg', alt: 'roadster3840' },
 					'1600': { src: 'roadster1600.jpg', alt: 'roadster1600' },
@@ -41,42 +46,28 @@
 				},
 			}
 		},
-		computed: {
+		beforeMount() {
+			this.window.width = window.innerWidth
+		},
+		methods: {
 			changPicture() {
 				console.log(this.window.width)
 				switch (this.window.width) {
 					case 3000:
-						console.log(this.picture['3840'])
 						return this.picture['3840']
 					case 1440:
-						console.log(this.picture['1600'])
 						return this.picture['1600']
 					case 1024:
-						console.log(this.picture['1440'])
 						return this.picture['1440']
 					case 800:
-						console.log(this.picture['1024'])
 						return this.picture['1024']
 					case 700:
-						console.log(this.picture['800'])
 						return this.picture['800']
 					case 400:
-						console.log(this.picture['700'])
 						return this.picture['700']
 					default:
-						console.log(this.picture['400'])
 						return this.picture['400']
 				}
-			},
-		},
-		beforeMount() {
-			window.addEventListener('resize', this.handleResize)
-			this.handleResize()
-		},
-		methods: {
-			handleResize() {
-				this.window.width = window.innerWidth
-				this.window.height = window.innerHeight
 			},
 		},
 	}
