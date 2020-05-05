@@ -1,3 +1,5 @@
+// https://www.npmjs.com/package/dotenv
+require('dotenv').config()
 const imageminMozjpeg = require('imagemin-mozjpeg')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const isDev = process.env.NODE_ENV !== 'production'
@@ -39,7 +41,7 @@ module.exports = {
 		scss: ['@/assets/style/main.scss'],
 	},
 	plugins: [],
-	buildModules: ['@nuxtjs/dotenv', '@nuxtjs/eslint-module', 'nuxt-purgecss', '@nuxtjs/google-analytics'],
+	buildModules: ['@nuxtjs/eslint-module', 'nuxt-purgecss', '@nuxtjs/google-analytics'],
 	modules: ['@nuxtjs/axios', '@nuxtjs/style-resources', 'nuxt-trailingslash-module', '@nuxtjs/sitemap', '@nuxtjs/robots'],
 	axios: {},
 	build: {
@@ -141,16 +143,16 @@ module.exports = {
 		base: '/',
 	},
 	googleAnalytics: {
-		id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_ID,
+		id: process.env.GOOGLE_ANALYTICS_ID,
 	},
 	sitemap: {
-		hostname: process.env.NUXT_ENV_BASE_URL,
+		hostname: process.env.BASE_URL,
 		gzip: true,
 		exclude: ['/admin/**'],
 	},
 	robots: {
 		UserAgent: '*',
 		Disallow: ['/admin'],
-		Sitemap: process.env.NUXT_ENV_BASE_URL + '/sitemap.xml',
+		Sitemap: process.env.BASE_URL + '/sitemap.xml',
 	},
 }
