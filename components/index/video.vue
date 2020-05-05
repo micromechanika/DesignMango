@@ -1,10 +1,6 @@
 <template>
 	<div class="video" @click="show = !show">
-		<figure
-			v-show="!show"
-			:style="{ backgroundSize: '100% 100%', backgroundImage: `url(require(@/assets/videos/${changPicture.src}));` }"
-			@click="show = !show"
-		>
+		<figure v-show="!show" :style="{ backgroundImage: `url(require(@/assets/videos/${changPicture.src}));` }" @click="show = !show">
 			<img
 				v-show="!show"
 				:src="require(`@/assets/videos/${changPicture.src}`)"
