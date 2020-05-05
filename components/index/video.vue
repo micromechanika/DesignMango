@@ -1,11 +1,20 @@
 <template>
 	<div class="video" @click="show = !show">
-		<figure v-show="!show" :style="{ backgroundSize: '100% 100%', backgroundImage: 'url(videos/roadster400.jpg);' }" @click="show = !show">
-			<img v-show="!show" :src="`videos/${changPicture.src}`" :srcset="`videos/${changPicture.src}`" :alt="`videos/${changPicture.alt}`" />
+		<figure
+			v-show="!show"
+			:style="{ backgroundSize: '100% 100%', backgroundImage: `url(require(@/assets/videos/${changPicture.src}));` }"
+			@click="show = !show"
+		>
+			<img
+				v-show="!show"
+				:src="require(`@/assets/videos/${changPicture.src}`)"
+				:srcset="require(`@/assets/videos/${changPicture.src}`)"
+				:alt="`${changPicture.alt}`"
+			/>
 		</figure>
 
 		<video v-show="show" autoplay preload="none" muted loop>
-			<source src="videos/Roadster.mp4" type="video/mp4" />
+			<source src="@/assets/videos/Roadster.mp4" type="video/mp4" />
 			please update you browser
 		</video>
 		<div class="container">
@@ -22,22 +31,28 @@
 <script>
 	export default {
 		name: 'Video',
-		props: {},
+		props: {
+			picture: {
+				type: Object,
+				default() {
+					return {
+						'3840': { src: 'roadster3840.jpg', alt: 'roadster3840' },
+						'1600': { src: 'roadster1600.jpg', alt: 'roadster1600' },
+						'1440': { src: 'roadster1440.jpg', alt: 'roadster1440' },
+						'1024': { src: 'roadster1024.jpg', alt: 'roadster1024' },
+						'800': { src: 'roadster800.jpg', alt: 'roadster800' },
+						'700': { src: 'roadster700.jpg', alt: 'roadster700' },
+						'400': { src: 'roadster400.jpg', alt: 'roadster400' },
+					}
+				},
+			},
+		},
 		data() {
 			return {
 				window: {
 					width: 0,
 				},
 				show: false,
-				picture: {
-					'3840': { src: 'roadster3840.jpg', alt: 'roadster3840' },
-					'1600': { src: 'roadster1600.jpg', alt: 'roadster1600' },
-					'1440': { src: 'roadster1440.jpg', alt: 'roadster1440' },
-					'1024': { src: 'roadster1024.jpg', alt: 'roadster1024' },
-					'800': { src: 'roadster800.jpg', alt: 'roadster800' },
-					'700': { src: 'roadster700.jpg', alt: 'roadster700' },
-					'400': { src: 'roadster400.jpg', alt: 'roadster400' },
-				},
 			}
 		},
 		computed: {
