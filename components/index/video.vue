@@ -1,13 +1,6 @@
 <template>
 	<div class="video" @click="show = !show">
-		<figure v-show="!show" :style="{ backgroundImage: `url(require(@/assets/videos/${changPicture.src}));` }" @click="show = !show">
-			<img
-				v-show="!show"
-				:src="require(`@/assets/videos/${changPicture.src}`)"
-				:srcset="require(`@/assets/videos/${changPicture.src}`)"
-				:alt="`${changPicture.alt}`"
-			/>
-		</figure>
+		<Figure v-show="!show" @click="show = !show" />
 
 		<video v-show="show" autoplay preload="none" muted loop>
 			<source src="@/assets/videos/Roadster.mp4" type="video/mp4" />
@@ -25,55 +18,14 @@
 </template>
 
 <script>
+	import Figure from '../base/figure'
 	export default {
 		name: 'Video',
-		props: {
-			picture: {
-				type: Object,
-				default() {
-					return {
-						'3840': { src: 'roadster3840.jpg', alt: 'roadster3840' },
-						'1600': { src: 'roadster1600.jpg', alt: 'roadster1600' },
-						'1440': { src: 'roadster1440.jpg', alt: 'roadster1440' },
-						'1024': { src: 'roadster1024.jpg', alt: 'roadster1024' },
-						'800': { src: 'roadster800.jpg', alt: 'roadster800' },
-						'700': { src: 'roadster700.jpg', alt: 'roadster700' },
-						'400': { src: 'roadster400.jpg', alt: 'roadster400' },
-					}
-				},
-			},
-		},
+		components: { Figure },
 		data() {
 			return {
-				window: {
-					width: 0,
-				},
 				show: false,
 			}
-		},
-		computed: {
-			changPicture() {
-				const w = this.window.width
-				switch (true) {
-					case w >= 3000:
-						return this.picture['3840']
-					case w >= 1440:
-						return this.picture['1600']
-					case w >= 1024:
-						return this.picture['1440']
-					case w >= 800:
-						return this.picture['1024']
-					case w >= 700:
-						return this.picture['800']
-					case w >= 400:
-						return this.picture['700']
-					default:
-						return this.picture['400']
-				}
-			},
-		},
-		beforeMount() {
-			this.window.width = window.innerWidth
 		},
 	}
 </script>

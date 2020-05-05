@@ -1,6 +1,6 @@
 <template>
-	<figure :style="{ backgroundImage: `url(${src});` }">
-		<img :src="src" :srcset="src" :alt="alt" />
+	<figure :style="{ backgroundImage: `url(${suitablePicture.src});` }">
+		<img :src="`${suitablePicture.src}`" :srcset="`${suitablePicture.src}`" :alt="`${suitablePicture.alt}`" />
 	</figure>
 </template>
 
@@ -8,44 +8,29 @@
 	export default {
 		name: 'Figure',
 		props: {
-			src: {
-				type: String,
-				default() {
-					return this.suitablePicture.src
-				},
-			},
-			alt: {
-				type: String,
-				default() {
-					return this.suitablePicture.alt
-				},
-			},
 			figures: {
 				type: Object,
 				default() {
 					return {
-						'3840': { src: 'video/roadster3840.jpg', alt: 'roadster3840' },
-						'1600': { src: 'video/roadster1600.jpg', alt: 'roadster1600' },
-						'1440': { src: 'video/roadster1440.jpg', alt: 'roadster1440' },
-						'1024': { src: 'video/roadster1024.jpg', alt: 'roadster1024' },
-						'800': { src: 'video/roadster800.jpg', alt: 'roadster800' },
-						'700': { src: 'video/roadster700.jpg', alt: 'roadster700' },
-						'400': { src: 'video/roadster400.jpg', alt: 'roadster400' },
+						'3840': { src: 'videos/roadster3840.jpg', alt: 'roadster3840' },
+						'1600': { src: 'videos/roadster1600.jpg', alt: 'roadster1600' },
+						'1440': { src: 'videos/roadster1440.jpg', alt: 'roadster1440' },
+						'1024': { src: 'videos/roadster1024.jpg', alt: 'roadster1024' },
+						'800': { src: 'videos/roadster800.jpg', alt: 'roadster800' },
+						'700': { src: 'videos/roadster700.jpg', alt: 'roadster700' },
+						'400': { src: 'videos/roadster400.jpg', alt: 'roadster400' },
 					}
 				},
 			},
 		},
 		data() {
 			return {
-				width: window.innerWidth,
+				width: 0,
 			}
 		},
 		computed: {
-			changeWidth() {
-				return window.innerWidth
-			},
 			suitablePicture() {
-				const w = this.width !== this.changeWidth() ? this.changeWidth() : this.width
+				const w = this.width
 				switch (true) {
 					case w >= 3000:
 						return this.figures['3840']
@@ -62,6 +47,20 @@
 					default:
 						return this.figures['400']
 				}
+			},
+		},
+		mounted() {
+			this.$nextTick(function() {
+				window.addEventListener('resize', this.getWindowWidth)
+				this.getWindowWidth()
+			})
+		},
+		beforeDestroy() {
+			window.removeEventListener('resize', this.getWindowWidth)
+		},
+		methods: {
+			getWindowWidth(event) {
+				this.width = document.documentElement.clientWidth
 			},
 		},
 	}
