@@ -1,12 +1,12 @@
 <template>
 	<div class="video">
-		<figure @click="show = !show" v-show="!show" :style="{ backgroundSize: '100% 100%', backgroundImage: 'url(videos/roadster400.jpg);' }">
+		<figure v-show="!show" :style="{ backgroundSize: '100% 100%', backgroundImage: 'url(videos/roadster400.jpg);' }" @click="show = !show">
 			<img
-				@click="show = !show"
 				v-show="!show"
 				:src="`videos/${changPicture.src}`"
 				:srcset="`videos/${changPicture.src}`"
 				:alt="`videos/${changPicture.alt}`"
+				@click="show = !show"
 			/>
 		</figure>
 
