@@ -1,13 +1,7 @@
 <template>
-	<div class="video">
+	<div class="video" @click="show = !show">
 		<figure v-show="!show" :style="{ backgroundSize: '100% 100%', backgroundImage: 'url(videos/roadster400.jpg);' }" @click="show = !show">
-			<img
-				v-show="!show"
-				:src="`videos/${changPicture.src}`"
-				:srcset="`videos/${changPicture.src}`"
-				:alt="`videos/${changPicture.alt}`"
-				@click="show = !show"
-			/>
+			<img v-show="!show" :src="`videos/${changPicture.src}`" :srcset="`videos/${changPicture.src}`" :alt="`videos/${changPicture.alt}`" />
 		</figure>
 
 		<video v-show="show" autoplay preload="none" muted loop>
@@ -46,29 +40,29 @@
 				},
 			}
 		},
-		beforeMount() {
-			this.window.width = window.innerWidth
-		},
-		methods: {
+		computed: {
 			changPicture() {
-				console.log(this.window.width)
-				switch (this.window.width) {
-					case 3000:
+				const w = this.window.width
+				switch (true) {
+					case w >= 3000:
 						return this.picture['3840']
-					case 1440:
+					case w >= 1440:
 						return this.picture['1600']
-					case 1024:
+					case w >= 1024:
 						return this.picture['1440']
-					case 800:
+					case w >= 800:
 						return this.picture['1024']
-					case 700:
+					case w >= 700:
 						return this.picture['800']
-					case 400:
+					case w >= 400:
 						return this.picture['700']
 					default:
 						return this.picture['400']
 				}
 			},
+		},
+		beforeMount() {
+			this.window.width = window.innerWidth
 		},
 	}
 </script>
