@@ -6,7 +6,7 @@
 
 <script>
 	export default {
-		name: 'figure',
+		name: 'Figure',
 		props: {
 			src: {
 				type: String,
