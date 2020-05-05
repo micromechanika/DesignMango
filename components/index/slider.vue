@@ -7,7 +7,7 @@
 			</h2>
 		</div>
 		<div v-for="(slide, slideID) in sliders" :key="slideID" class="sliders">
-			<img :src="require(`@/assets/img/slider/${slide.img.src}`)" :alt="`${slide.img.alt}`" />
+			<Figure :figures="slide.img" />
 			<section>
 				<div class="description">
 					<h6>{{ slide.description.h6 }}</h6>
@@ -31,8 +31,10 @@
 </template>
 
 <script>
+	import Figure from '../base/figure'
 	export default {
 		name: 'Slider',
+		components: { Figure },
 		props: {
 			message: {
 				type: Object,
