@@ -22,7 +22,6 @@ module.exports = {
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 		],
 	},
-	rootDir: __dirname,
 	loading: false,
 	cache: {
 		max: 0,
@@ -40,8 +39,8 @@ module.exports = {
 		scss: ['@/assets/style/main.scss'],
 	},
 	plugins: [],
-	buildModules: ['@nuxtjs/eslint-module', 'nuxt-purgecss', '@nuxtjs/google-analytics'],
-	modules: ['@nuxtjs/axios', '@nuxtjs/dotenv', '@nuxtjs/style-resources', 'nuxt-trailingslash-module', '@nuxtjs/sitemap', '@nuxtjs/robots'],
+	buildModules: ['@nuxtjs/dotenv', '@nuxtjs/eslint-module', 'nuxt-purgecss', '@nuxtjs/google-analytics'],
+	modules: ['@nuxtjs/axios', '@nuxtjs/style-resources', 'nuxt-trailingslash-module', '@nuxtjs/sitemap', '@nuxtjs/robots'],
 	axios: {},
 	build: {
 		optimizeCss: false,
@@ -141,19 +140,17 @@ module.exports = {
 		prefetchLinks: false,
 		base: '/',
 	},
-	env: {
-		BASE_URL: process.env.BASE_URL || 'http://localhost:3000',
-	},
 	googleAnalytics: {
-		id: process.env.GOOGLE_ANALYTICS_ID,
+		id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_ID,
 	},
 	sitemap: {
-		hostname: 'https://example.com',
+		hostname: process.env.NUXT_ENV_BASE_URL,
 		gzip: true,
 		exclude: ['/admin/**'],
 	},
 	robots: {
 		UserAgent: '*',
-		Disallow: '/',
+		Disallow: ['/admin'],
+		Sitemap: process.env.NUXT_ENV_BASE_URL + '/sitemap.xml',
 	},
 }

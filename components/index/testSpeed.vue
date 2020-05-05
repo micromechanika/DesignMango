@@ -7,7 +7,8 @@
 				ut sed a non, ac non.
 			</p>
 			<form>
-				<input type="text" name="checkSite" placeholder="www.google.com" />
+				<label for="checkSite">checkSite</label>
+				<input id="checkSite" type="text" name="checkSite" placeholder="www.google.com" />
 				<button type="submit">
 					<div>
 						<img src="@/assets/img/blackBow.svg" alt="blackBow" />
@@ -66,6 +67,9 @@
 		justify-content: center;
 		width: 100%;
 		height: 40px;
+		label {
+			font-size: 0;
+		}
 		input {
 			background-color: $bg;
 			width: 64%;

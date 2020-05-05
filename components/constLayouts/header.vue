@@ -2,7 +2,7 @@
 	<header v-scroll="handleScroll">
 		<div class="container">
 			<nuxt-link to="/">
-				<img src="@/assets/img/logo.svg" />
+				<img src="@/assets/img/logo.svg" alt="mangoDevelopers" />
 			</nuxt-link>
 			<nav>
 				<nuxt-link to="/">
@@ -23,12 +23,12 @@
 			</nav>
 			<aside>
 				<div class="button">
-					<img src="@/assets/img/bow.svg" />
+					<img src="@/assets/img/bow.svg" alt="signin" />
 					<p>Sign in</p>
 				</div>
 				<div class="lang">
 					<p>eng</p>
-					<img src="@/assets/img/mark.svg" />
+					<img src="@/assets/img/mark.svg" alt="selectLang" />
 				</div>
 			</aside>
 		</div>
