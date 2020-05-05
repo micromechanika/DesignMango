@@ -1,12 +1,11 @@
 <template>
 	<div class="video" @click="show = !show">
-		<picture v-show="!show">
-			<source v-show="!show" :srcset="require(`@/assets/videos/${changPicture.src}`)" />
-			<img v-show="!show" :src="require(`@/assets/videos/${changPicture.src}`)" :alt="require(`@/assets/videos/${changPicture.alt}`)" />
-		</picture>
+		<figure v-show="!show" :style="{ backgroundSize: '100% 100%', backgroundImage: 'url(videos/roadster400.jpg);' }">
+			<img :src="`videos/${changPicture.src}`" :srcset="`videos/${changPicture.src}`" :alt="`videos/${changPicture.alt}`" />
+		</figure>
 
 		<video v-show="show" autoplay preload="none" muted loop>
-			<source src="@/assets/videos/Roadster.mp4" type="video/mp4" />
+			<source src="videos/Roadster.mp4" type="video/mp4" />
 			please update you browser
 		</video>
 		<div class="container">
@@ -23,22 +22,7 @@
 <script>
 	export default {
 		name: 'Video',
-		props: {
-			picture: {
-				type: Object,
-				default() {
-					return {
-						'3840': { src: 'roadster3840.jpg', alt: 'roadster3840' },
-						'1600': { src: 'roadster1600.jpg', alt: 'roadster1600' },
-						'1440': { src: 'roadster1440.jpg', alt: 'roadster1440' },
-						'1024': { src: 'roadster1024.jpg', alt: 'roadster1024' },
-						'800': { src: 'roadster800.jpg', alt: 'roadster800' },
-						'700': { src: 'roadster700.jpg', alt: 'roadster700' },
-						'400': { src: 'roadster400.jpg', alt: 'roadster400' },
-					}
-				},
-			},
-		},
+		props: {},
 		data() {
 			return {
 				show: false,
@@ -46,37 +30,53 @@
 					width: 0,
 					height: 0,
 				},
+				picture: {
+					'3840': { src: 'roadster3840.jpg', alt: 'roadster3840' },
+					'1600': { src: 'roadster1600.jpg', alt: 'roadster1600' },
+					'1440': { src: 'roadster1440.jpg', alt: 'roadster1440' },
+					'1024': { src: 'roadster1024.jpg', alt: 'roadster1024' },
+					'800': { src: 'roadster800.jpg', alt: 'roadster800' },
+					'700': { src: 'roadster700.jpg', alt: 'roadster700' },
+					'400': { src: 'roadster400.jpg', alt: 'roadster400' },
+				},
 			}
+		},
+		computed: {
+			changPicture() {
+				console.log(this.window.width)
+				switch (this.window.width) {
+					case 3000:
+						console.log(this.picture['3840'])
+						return this.picture['3840']
+					case 1440:
+						console.log(this.picture['1600'])
+						return this.picture['1600']
+					case 1024:
+						console.log(this.picture['1440'])
+						return this.picture['1440']
+					case 800:
+						console.log(this.picture['1024'])
+						return this.picture['1024']
+					case 700:
+						console.log(this.picture['800'])
+						return this.picture['800']
+					case 400:
+						console.log(this.picture['700'])
+						return this.picture['700']
+					default:
+						console.log(this.picture['400'])
+						return this.picture['400']
+				}
+			},
 		},
 		beforeMount() {
 			window.addEventListener('resize', this.handleResize)
 			this.handleResize()
 		},
-		destroyed() {
-			window.removeEventListener('resize', this.handleResize)
-		},
 		methods: {
 			handleResize() {
 				this.window.width = window.innerWidth
 				this.window.height = window.innerHeight
-			},
-			changPicture() {
-				switch (this.window.width) {
-					case 3000:
-						return this.picture['3840']
-					case 1440:
-						return this.picture['1600']
-					case 1024:
-						return this.picture['1440']
-					case 800:
-						return this.picture['1024']
-					case 700:
-						return this.picture['800']
-					case 400:
-						return this.picture['700']
-					default:
-						return this.picture['400']
-				}
 			},
 		},
 	}
@@ -100,18 +100,9 @@
 		height: 100%;
 		@include grayGradient(180deg);
 	}
-	picture,
+	figure,
 	source,
-	img {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
+	img,
 	video {
 		position: absolute;
 		top: 0;
