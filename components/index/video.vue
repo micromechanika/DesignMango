@@ -9,7 +9,7 @@
 		<div class="container">
 			<h1>Your customers need <span>a website!</span></h1>
 			<button>
-				<img src="@/assets/img/blackBow.svg" />
+				<img src="@/assets/img/blackBow.svg" alt="blackBow" />
 				<p>Get Started</p>
 			</button>
 		</div>

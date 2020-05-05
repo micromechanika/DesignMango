@@ -50,7 +50,15 @@
 				default() {
 					return [
 						{
-							img: { src: 'slide1.png', alt: 'slide1' },
+							img: {
+								'3840': { src: 'img/slider/slide1/slide500.jpeg', alt: 'slide500' },
+								'1600': { src: 'img/slider/slide1/slide500.jpeg', alt: 'slide500' },
+								'1440': { src: 'img/slider/slide1/slide500.jpeg', alt: 'slide500' },
+								'1024': { src: 'img/slider/slide1/slide500.jpeg', alt: 'slide500' },
+								'800': { src: 'img/slider/slide1/slide400.jpeg', alt: 'slide400' },
+								'700': { src: 'img/slider/slide1/slide300.jpeg', alt: 'slide300' },
+								'400': { src: 'img/slider/slide1/slide200.jpeg', alt: 'slide200' },
+							},
 							description: {
 								h6: 'First step',
 								h2: 'Prepare',
@@ -64,7 +72,15 @@
 							],
 						},
 						{
-							img: { src: 'slide2.png', alt: 'slide2' },
+							img: {
+								'3840': { src: 'img/slider/slide2/slide500.jpeg', alt: 'slide500' },
+								'1600': { src: 'img/slider/slide2/slide500.jpeg', alt: 'slide500' },
+								'1440': { src: 'img/slider/slide2/slide500.jpeg', alt: 'slide500' },
+								'1024': { src: 'img/slider/slide2/slide500.jpeg', alt: 'slide500' },
+								'800': { src: 'img/slider/slide2/slide400.jpeg', alt: 'slide400' },
+								'700': { src: 'img/slider/slide2/slide300.jpeg', alt: 'slide300' },
+								'400': { src: 'img/slider/slide2/slide200.jpeg', alt: 'slide200' },
+							},
 							description: {
 								h6: 'Second step',
 								h2: 'Action',
@@ -78,7 +94,15 @@
 							],
 						},
 						{
-							img: { src: 'slide3.png', alt: 'slide3' },
+							img: {
+								'3840': { src: 'img/slider/slide3/slide500.jpeg', alt: 'slide500' },
+								'1600': { src: 'img/slider/slide3/slide500.jpeg', alt: 'slide500' },
+								'1440': { src: 'img/slider/slide3/slide500.jpeg', alt: 'slide500' },
+								'1024': { src: 'img/slider/slide3/slide500.jpeg', alt: 'slide500' },
+								'800': { src: 'img/slider/slide3/slide400.jpeg', alt: 'slide400' },
+								'700': { src: 'img/slider/slide3/slide300.jpeg', alt: 'slide300' },
+								'400': { src: 'img/slider/slide3/slide200.jpeg', alt: 'slide200' },
+							},
 							description: {
 								h6: 'Third step',
 								h2: 'Final Webpage',
@@ -149,10 +173,14 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
-		img {
+		figure {
 			width: 34%;
 			height: 100%;
-			object-fit: cover;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 		}
 		section {
 			width: 66%;

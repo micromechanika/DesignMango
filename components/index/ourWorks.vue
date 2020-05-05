@@ -3,25 +3,69 @@
 		<h2>Our <span>works</span></h2>
 		<section>
 			<button>
-				<img src="@/assets/img/blackBow.svg" />
+				<img src="@/assets/img/blackBow.svg" alt="blackBow" />
 				<div class="text">
 					<p>Yam-Yam</p>
 					<p>Bakery Website</p>
 				</div>
 			</button>
 			<div class="examples">
-				<img src="../../static/img/works/2Work.png" />
-				<img src="../../static/img/works/3Work.png" />
-				<img src="../../static/img/works/2Work.png" />
-				<img src="../../static/img/works/3Work.png" />
+				<Figure v-for="(work, workKey) in examples" :key="workKey" :figures="work" />
 			</div>
 		</section>
 	</div>
 </template>
 
 <script>
+	import Figure from '../base/figure'
 	export default {
 		name: 'OurWorks',
+		components: { Figure },
+		props: {
+			examples: {
+				type: Array,
+				default() {
+					return [
+						{
+							'3840': { src: 'img/works/work1/work368.jpeg', alt: 'work368' },
+							'1600': { src: 'img/works/work1/work368.jpeg', alt: 'work368' },
+							'1440': { src: 'img/works/work1/work368.jpeg', alt: 'work368' },
+							'1024': { src: 'img/works/work1/work300.jpeg', alt: 'work300' },
+							'800': { src: 'img/works/work1/work200.jpeg', alt: 'work200' },
+							'700': { src: 'img/works/work1/work150.jpeg', alt: 'work150' },
+							'400': { src: 'img/works/work1/work100.jpeg', alt: 'work100' },
+						},
+						{
+							'3840': { src: 'img/works/work2/work368.jpeg', alt: 'work368' },
+							'1600': { src: 'img/works/work2/work368.jpeg', alt: 'work368' },
+							'1440': { src: 'img/works/work2/work368.jpeg', alt: 'work368' },
+							'1024': { src: 'img/works/work2/work300.jpeg', alt: 'work300' },
+							'800': { src: 'img/works/work2/work200.jpeg', alt: 'work200' },
+							'700': { src: 'img/works/work2/work150.jpeg', alt: 'work150' },
+							'400': { src: 'img/works/work2/work100.jpeg', alt: 'work100' },
+						},
+						{
+							'3840': { src: 'img/works/work3/work368.jpeg', alt: 'work368' },
+							'1600': { src: 'img/works/work3/work368.jpeg', alt: 'work368' },
+							'1440': { src: 'img/works/work3/work368.jpeg', alt: 'work368' },
+							'1024': { src: 'img/works/work3/work300.jpeg', alt: 'work300' },
+							'800': { src: 'img/works/work3/work200.jpeg', alt: 'work200' },
+							'700': { src: 'img/works/work3/work150.jpeg', alt: 'work150' },
+							'400': { src: 'img/works/work3/work100.jpeg', alt: 'work100' },
+						},
+						{
+							'3840': { src: 'img/works/work1/work368.jpeg', alt: 'work368' },
+							'1600': { src: 'img/works/work1/work368.jpeg', alt: 'work368' },
+							'1440': { src: 'img/works/work1/work368.jpeg', alt: 'work368' },
+							'1024': { src: 'img/works/work1/work300.jpeg', alt: 'work300' },
+							'800': { src: 'img/works/work1/work200.jpeg', alt: 'work200' },
+							'700': { src: 'img/works/work1/work150.jpeg', alt: 'work150' },
+							'400': { src: 'img/works/work1/work100.jpeg', alt: 'work100' },
+						},
+					]
+				},
+			},
+		},
 	}
 </script>
 
@@ -50,7 +94,6 @@
 		align-items: flex-start;
 		justify-content: center;
 	}
-
 	button {
 		width: 50%;
 		height: 100%;
@@ -92,10 +135,14 @@
 		flex-direction: row;
 		align-items: center;
 		flex-wrap: wrap;
-		img {
+		figure {
 			width: 50%;
 			height: 50%;
-			object-fit: cover;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 		}
 	}
 </style>

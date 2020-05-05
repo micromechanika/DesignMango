@@ -10,7 +10,7 @@
 				<input type="text" name="checkSite" placeholder="www.google.com" />
 				<button type="submit">
 					<div>
-						<img src="@/assets/img/blackBow.svg" />
+						<img src="@/assets/img/blackBow.svg" alt="blackBow" />
 						<p>Let’s Check!</p>
 					</div>
 				</button>
