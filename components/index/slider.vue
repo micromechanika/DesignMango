@@ -131,8 +131,8 @@
 	}
 	aside {
 		position: absolute;
-		right: -0.5rem;
-		bottom: 2rem;
+		right: 6rem;
+		bottom: 4rem;
 		display: flex;
 		flex-direction: row;
 		align-items: center;

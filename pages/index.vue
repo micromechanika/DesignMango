@@ -6,8 +6,8 @@
 			<TestSpeed />
 			<CallAction />
 			<OurWorks />
-			<Slider />
 		</div>
+		<Slider />
 	</section>
 </template>
 
