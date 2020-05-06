@@ -1,8 +1,8 @@
 <template>
 	<div class="botAssistant">
-		<div class="showAssistant">
+		<aside>
 			<img src="@/assets/img/botAssistant.svg" alt="botAssistant" />
-		</div>
+		</aside>
 		<article>
 			<h2>Your personal <span>bot-assistant</span></h2>
 			<h6>Our chat bot makes regular customers your clients</h6>
@@ -12,7 +12,7 @@
 
 <script>
 	export default {
-		name: 'botAssistant',
+		name: 'BotAssistant',
 	}
 </script>
 
@@ -20,18 +20,22 @@
 	.botAssistant {
 		margin: 12rem auto;
 		width: 100%;
+		height: 80vh;
 		display: flex;
 		flex-direction: row;
 		align-items: flex-start;
 		justify-content: space-between;
 	}
-	.showAssistant {
+	aside {
 		width: 50%;
-		height: auto;
+		height: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: flex-start;
 		img {
 			width: 100%;
 			height: 100%;
-			object-fit: cover;
 		}
 	}
 	article {
