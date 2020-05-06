@@ -1,6 +1,9 @@
 <template>
 	<div class="package">
-		<h2>Choose your <span>perfect package</span></h2>
+		<div class="message">
+			<h2>Choose your </h2>
+			<h3>perfect package</h3>
+		</div>
 		<section>
 			<article>
 				<div class="info">
@@ -65,25 +68,35 @@
 
 <style lang="scss" scoped>
 	.package {
+		margin: 0 auto;
+		width: 67%;
+		height: 80vh;
+	}
+	.message {
+		width: 100%;
+		margin: 2.5rem 0;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
 		justify-content: center;
-	}
-	h2 {
-		margin: 2.5rem 0;
-		font-weight: 500;
-		font-size: 2.5rem;
-		line-height: 130%;
-		color: $white;
-		span {
+		align-items: center;
+		h2,
+		h3 {
+			font-weight: 500;
+			font-size: 2.5rem;
+			line-height: 130%;
+		}
+		h2 {
+			color: $white;
+		}
+		h3 {
 			color: $green;
 		}
 	}
+
 	section {
+		width: 100%;
+		height: 100%;
 		margin: 2.5rem 0;
-		width: 68%;
-		height: 80vh;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -93,10 +106,6 @@
 		width: 33.3333%;
 		height: 100%;
 		border: 0.125rem solid $white;
-		h2 {
-			font-size: 2rem;
-			line-height: 130%;
-		}
 	}
 	.inPackage {
 		margin: 2rem 0;
@@ -122,5 +131,10 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		h2 {
+			margin: 1.75rem 0 3.125rem 0;
+			font-size: 2rem;
+			line-height: 130%;
+		}
 	}
 </style>

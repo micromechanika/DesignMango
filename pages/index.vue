@@ -10,8 +10,8 @@
 		<Slider />
 		<div class="container">
 			<BotAssistant />
-			<Package />
 		</div>
+		<Package />
 	</section>
 </template>
 
