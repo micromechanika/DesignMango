@@ -127,7 +127,6 @@
 		margin: 12.5rem auto;
 		position: relative;
 		width: 100%;
-		height: 80vh;
 	}
 	aside {
 		position: absolute;

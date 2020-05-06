@@ -7,6 +7,7 @@
 			<CallAction />
 			<OurWorks />
 		</div>
+		<Slider />
 		<div class="container">
 			<BotAssistant />
 		</div>
@@ -19,9 +20,10 @@
 	import TestSpeed from '../components/index/testSpeed'
 	import CallAction from '../components/index/callAction'
 	import OurWorks from '../components/index/ourWorks'
+	import Slider from '../components/index/slider'
 	import BotAssistant from '../components/index/botAssistant'
 	export default {
-		components: { Video, Certificates, TestSpeed, CallAction, OurWorks, BotAssistant },
+		components: { Video, Certificates, TestSpeed, CallAction, OurWorks, Slider, BotAssistant },
 	}
 </script>
 
