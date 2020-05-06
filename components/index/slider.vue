@@ -255,3 +255,4 @@
 		}
 	}
 </style>
+<!--TODO: fix bug in slider height-->

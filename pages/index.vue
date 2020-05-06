@@ -10,6 +10,7 @@
 		<Slider />
 		<div class="container">
 			<BotAssistant />
+			<Package />
 		</div>
 	</section>
 </template>
@@ -22,8 +23,9 @@
 	import OurWorks from '../components/index/ourWorks'
 	import Slider from '../components/index/slider'
 	import BotAssistant from '../components/index/botAssistant'
+	import Package from '../components/index/package'
 	export default {
-		components: { Video, Certificates, TestSpeed, CallAction, OurWorks, Slider, BotAssistant },
+		components: { Video, Certificates, TestSpeed, CallAction, OurWorks, Slider, BotAssistant, Package },
 	}
 </script>
 
