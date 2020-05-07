@@ -12,6 +12,9 @@
 			<BotAssistant />
 		</div>
 		<Package />
+		<div class="container">
+			<Faq />
+		</div>
 	</section>
 </template>
 
@@ -24,8 +27,9 @@
 	import Slider from '../components/index/slider'
 	import BotAssistant from '../components/index/botAssistant'
 	import Package from '../components/index/package'
+	import Faq from '../components/index/faq'
 	export default {
-		components: { Video, Certificates, TestSpeed, CallAction, OurWorks, Slider, BotAssistant, Package },
+		components: { Video, Certificates, TestSpeed, CallAction, OurWorks, Slider, BotAssistant, Package, Faq },
 	}
 </script>
 

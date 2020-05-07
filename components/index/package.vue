@@ -5,7 +5,7 @@
 			<h3>perfect package</h3>
 		</div>
 		<section>
-			<article v-for="(item, pakageKey) in packages" :key="pakageKey">
+			<article v-for="(item, pakageKey) in packages" :key="pakageKey" :class="pakageKey === 1 ? 'active' : ''">
 				<div class="info">
 					<h2>{{ item.name }}</h2>
 					<div v-for="(include, includeKey) in item.includes" :key="includeKey" class="inPackage">
@@ -63,6 +63,9 @@
 </script>
 
 <style lang="scss" scoped>
+	.active {
+		@include lilacGradient;
+	}
 	.package {
 		margin: 0 auto;
 		width: 67%;

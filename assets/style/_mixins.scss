@@ -24,3 +24,6 @@
 	background: linear-gradient($deg, rgba(5, 4, 30, 0.15) 0%, $bg 100%);
 }
 
+@mixin lilacGradient {
+	background: linear-gradient(264.22deg, rgba(5, 4, 30, 0.18) 10%, rgba(152, 148, 255, 0.38) 90%);
+}
