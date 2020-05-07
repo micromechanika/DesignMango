@@ -26,7 +26,7 @@
 
 <script>
 	export default {
-		name: 'faq',
+		name: 'Faq',
 		data() {
 			return {
 				showFAQ: true,
