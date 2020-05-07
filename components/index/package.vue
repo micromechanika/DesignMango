@@ -103,50 +103,6 @@
 		width: 30%;
 		border: 0.125rem solid $white;
 		margin: 0.3rem;
-		.info {
-			width: 72%;
-			height: 50vh;
-			margin: 0 auto;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: flex-start;
-			h2 {
-				margin: 1.75rem 0 3.125rem 0;
-				font-size: 2rem;
-				line-height: 130%;
-			}
-		}
-		.price {
-			width: 100%;
-			height: 10vh;
-			border: 0.125rem solid $white;
-			border-left: 0;
-			border-right: 0;
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			align-items: center;
-			color: $white;
-
-			.curensy {
-				margin: 0 0.8rem 0 0;
-			}
-			.curensy,
-			.rate {
-				font-weight: 500;
-				font-size: 3rem;
-				line-height: 4.5rem;
-			}
-			.time {
-				font-weight: 500;
-				font-size: 1.5rem;
-				line-height: 2.25rem;
-				span {
-					margin: 0 0.8rem;
-				}
-			}
-		}
 		button {
 			width: 100%;
 			height: 10vh;
@@ -157,6 +113,49 @@
 				font-size: 1.5rem;
 				line-height: 130%;
 			}
+		}
+	}
+	.info {
+		width: 72%;
+		height: 50vh;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		h2 {
+			margin: 1.75rem 0 3.125rem 0;
+			font-size: 2rem;
+			line-height: 130%;
+		}
+	}
+	.price {
+		width: 100%;
+		height: 10vh;
+		border: 0.125rem solid $white;
+		border-left: 0;
+		border-right: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		color: $white;
+	}
+	.curensy {
+		margin: 0 0.8rem 0 0;
+	}
+	.curensy,
+	.rate {
+		font-weight: 500;
+		font-size: 3rem;
+		line-height: 4.5rem;
+	}
+	.time {
+		font-weight: 500;
+		font-size: 1.5rem;
+		line-height: 2.25rem;
+		span {
+			margin: 0 0.8rem;
 		}
 	}
 	.inPackage {
