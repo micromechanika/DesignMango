@@ -8,7 +8,7 @@
 			<article v-for="(item, pakageKey) in packages" :key="pakageKey">
 				<div class="info">
 					<h2>{{ item.name }}</h2>
-					<div class="inPackage" v-for="(include, includeKey) in item.includes" :key="includeKey">
+					<div v-for="(include, includeKey) in item.includes" :key="includeKey" class="inPackage">
 						<img src="@/assets/img/like.svg" alt="like" />
 						<h3>{{ include.offers }}</h3>
 					</div>
