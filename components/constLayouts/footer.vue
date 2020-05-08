@@ -1,19 +1,35 @@
 <template>
 	<footer>
 		<div class="container">
-			<nuxt-link to="/">
-				<aside />
-			</nuxt-link>
-			<nav>
-				<section v-for="(menu, navKey) in navMenu" :key="navKey">
-					<h2>{{ menu.h2 }}</h2>
-					<ul>
-						<li v-for="(list, listKey) in menu.ul" :key="listKey">
-							<nuxt-link to="/">{{ list }}</nuxt-link>
-						</li>
-					</ul>
-				</section>
-			</nav>
+			<div class="footerBar">
+				<nuxt-link to="/">
+					<aside />
+				</nuxt-link>
+				<nav>
+					<section v-for="(menu, navKey) in navMenu" :key="navKey">
+						<h2>{{ menu.h2 }}</h2>
+						<ul>
+							<li v-for="(list, listKey) in menu.ul" :key="listKey">
+								<nuxt-link to="/">{{ list }}</nuxt-link>
+							</li>
+						</ul>
+					</section>
+				</nav>
+			</div>
+			<hr />
+			<div class="end">
+				<div class="copyright">
+					Copyright © 2020 Mango Development | All rights reserved.
+				</div>
+				<div class="privacy">
+					<nuxt-link to="/">
+						Privacy Policy
+					</nuxt-link>
+					<nuxt-link to="/">
+						Terms and conditions
+					</nuxt-link>
+				</div>
+			</div>
 		</div>
 	</footer>
 </template>
@@ -45,6 +61,8 @@
 	}
 	.container {
 		@include container;
+	}
+	.footerBar {
 		width: 100%;
 		display: flex;
 		flex-direction: row;
@@ -64,9 +82,6 @@
 		flex-direction: row;
 		justify-content: flex-end;
 		flex-wrap: wrap;
-		a {
-			@include a;
-		}
 	}
 	section {
 		margin: 2rem 3.75rem;
@@ -93,6 +108,38 @@
 			&::marker {
 				display: none;
 			}
+		}
+	}
+	hr {
+		margin: 2rem 0;
+		width: 100%;
+		height: 0.01rem;
+		line-height: 0;
+		background-color: $white;
+	}
+	.end {
+		margin: 2rem 0;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.copyright {
+		width: 60%;
+		display: flex;
+		flex-direction: row;
+		align-content: flex-start;
+	}
+	.privacy {
+		width: 20%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		align-content: flex-end;
+		justify-content: space-between;
+		a {
+			text-decoration: $white underline;
 		}
 	}
 </style>

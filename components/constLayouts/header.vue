@@ -98,7 +98,6 @@
 		line-height: 1.25rem;
 		a {
 			margin: 0 1.875rem;
-			@include a;
 		}
 	}
 	section {

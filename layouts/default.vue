@@ -16,6 +16,7 @@
 	* {
 		margin: 0;
 		padding: 0;
+		@include a;
 		@include baseProps;
 		@include font;
 		font-family: 'Poppins', sans-serif;
