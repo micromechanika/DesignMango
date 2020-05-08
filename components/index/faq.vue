@@ -8,35 +8,66 @@
 			<a href="">Contact us!</a>
 		</article>
 		<ul>
-			<li @click="showFAQ = !showFAQ">
-				<article>
-					<div class="button" :class="!showFAQ ? 'active' : ''">
-						<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
-						<img src="@/assets/img/mark.svg" alt="mark" />
-					</div>
-					<p v-show="!showFAQ">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aut debitis esse expedita iure natus quas quod ullam? Asperiores,
-						impedit, itaque! A cupiditate expedita ipsa molestiae neque optio, repellat soluta.
-					</p>
-				</article>
-			</li>
+			<itemLi v-for="(item, idx) in FAQS" :key="idx" :item="item" :is-selected="selectedItem" @click.native="handleClick(item)" />
 		</ul>
 	</div>
 </template>
 
 <script>
+	import itemLi from '../base/faq'
 	export default {
 		name: 'Faq',
+		components: { itemLi },
+		props: {
+			// eslint-disable-next-line vue/prop-name-casing
+			FAQS: {
+				type: Array,
+				default() {
+					return [
+						{
+							head: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+							description:
+								'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aut debitis esse expedita iure natus quas quod ullam? Asperiores, impedit, itaque! A cupiditate expedita ipsa molestiae neque optio, repellat soluta.',
+						},
+						{
+							head: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+							description:
+								'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aut debitis esse expedita iure natus quas quod ullam? Asperiores, impedit, itaque! A cupiditate expedita ipsa molestiae neque optio, repellat soluta.',
+						},
+						{
+							head: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+							description:
+								'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aut debitis esse expedita iure natus quas quod ullam? Asperiores, impedit, itaque! A cupiditate expedita ipsa molestiae neque optio, repellat soluta.',
+						},
+						{
+							head: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+							description:
+								'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aut debitis esse expedita iure natus quas quod ullam? Asperiores, impedit, itaque! A cupiditate expedita ipsa molestiae neque optio, repellat soluta.',
+						},
+					]
+				},
+			},
+		},
 		data() {
 			return {
-				showFAQ: true,
+				selectedItem: null,
 			}
+		},
+		methods: {
+			handleClick(item) {
+				if (this.selectedItem !== item) {
+					this.selectedItem = item
+				} else {
+					this.selectedItem = ''
+				}
+			},
 		},
 	}
 </script>
 
 <style lang="scss" scoped>
 	.faq {
+		margin: 10rem 0;
 		display: flex;
 		flex-direction: row;
 		align-items: flex-start;
@@ -72,42 +103,6 @@
 		width: 60%;
 		display: flex;
 		flex-direction: column;
-		article {
-			width: 100%;
-			color: $white;
-
-			.button {
-				margin: 0 0 1.43rem 0;
-				width: 100%;
-				height: 5vh;
-				display: flex;
-				flex-direction: row;
-				justify-content: space-between;
-				align-items: center;
-				border-bottom: 0.0625rem solid $white;
-				h3 {
-					font-weight: 600;
-					font-size: 1.5rem;
-					line-height: 130%;
-				}
-				img {
-					width: 1.35rem;
-					height: auto;
-				}
-			}
-			.active {
-				border-bottom: 0.0625rem solid transparent;
-				h3 {
-					color: $green;
-				}
-			}
-
-			p {
-				margin: 1.43rem 0 0 0;
-				font-size: 1.5rem;
-				line-height: 130%;
-			}
-		}
 		li {
 			margin: 1rem 0;
 		}
