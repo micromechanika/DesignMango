@@ -2,12 +2,14 @@
 	<div>
 		<Header />
 		<nuxt />
+		<Footer />
 	</div>
 </template>
 <script>
 	import Header from '../components/constLayouts/header'
+	import Footer from '../components/constLayouts/footer'
 	export default {
-		components: { Header },
+		components: { Header, Footer },
 	}
 </script>
 <style lang="scss">
