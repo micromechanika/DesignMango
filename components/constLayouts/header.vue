@@ -1,26 +1,26 @@
 <template>
 	<header v-scroll="handleScroll">
 		<div class="container">
-			<nuxt-link to="/">
-				<aside />
-			</nuxt-link>
 			<nav>
+				<nuxt-link to="/">
+					<aside />
+				</nuxt-link>
 				<ul>
 					<li v-for="(item, menuKey) in navMenu" :key="menuKey">
 						<nuxt-link :to="item.link">{{ item.title }}</nuxt-link>
 					</li>
 				</ul>
+				<section>
+					<div class="button">
+						<aside />
+						<p>Sign in</p>
+					</div>
+					<div class="lang">
+						<p>eng</p>
+						<aside />
+					</div>
+				</section>
 			</nav>
-			<section>
-				<div class="button">
-					<img src="@/assets/img/bow.svg" alt="signin" />
-					<p>Sign in</p>
-				</div>
-				<div class="lang">
-					<p>eng</p>
-					<img src="@/assets/img/mark.svg" alt="selectLang" />
-				</div>
-			</section>
 		</div>
 	</header>
 </template>
@@ -54,7 +54,6 @@
 				},
 			},
 		},
-
 		computed: {},
 		methods: {
 			handleScroll(evt, el) {
@@ -75,11 +74,6 @@
 <style lang="scss" scoped>
 	.container {
 		@include container;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-		height: 5rem;
 	}
 	header {
 		position: fixed;
@@ -96,6 +90,11 @@
 		background-image: url('../../assets/img/logo.svg');
 	}
 	nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		height: 5rem;
 		ul {
 			display: flex;
 			flex-direction: row;
@@ -130,13 +129,16 @@
 				bottom: 0.3625rem;
 				color: $green;
 			}
-			img {
-				margin: 0;
+			aside {
 				width: 0.77rem;
-				height: auto;
+				height: 0.77rem;
 				position: absolute;
 				top: 0.3125rem;
 				right: 0.1875rem;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-image: url('../../assets/img/bow.svg');
 			}
 		}
 		.lang {
@@ -151,9 +153,13 @@
 				font-size: 0.875rem;
 				margin: 0 0.3125rem 0 0;
 			}
-			img {
+			aside {
 				width: 0.635rem;
-				height: auto;
+				height: 0.635rem;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-image: url('../../assets/img/mark.svg');
 			}
 		}
 	}
