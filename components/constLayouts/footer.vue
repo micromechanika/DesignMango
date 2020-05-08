@@ -19,7 +19,11 @@
 			<hr />
 			<div class="end">
 				<div class="copyright">
-					Copyright © 2020 Mango Development | All rights reserved.
+					<p>
+						Copyright © 2020
+						<nuxt-link to="/">Mango Development</nuxt-link>
+						| All rights reserved.
+					</p>
 				</div>
 				<div class="privacy">
 					<nuxt-link to="/">
@@ -130,6 +134,9 @@
 		display: flex;
 		flex-direction: row;
 		align-content: flex-start;
+		a {
+			padding: 0 0.3rem;
+		}
 	}
 	.privacy {
 		width: 20%;
