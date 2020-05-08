@@ -2,7 +2,7 @@
 	<header v-scroll="handleScroll">
 		<div class="container">
 			<nuxt-link to="/">
-				<img src="@/assets/img/logo.svg" alt="mangoDevelopers" />
+				<aside />
 			</nuxt-link>
 			<nav>
 				<nuxt-link to="/">
@@ -21,7 +21,7 @@
 					<p>Referenzen</p>
 				</nuxt-link>
 			</nav>
-			<aside>
+			<section>
 				<div class="button">
 					<img src="@/assets/img/bow.svg" alt="signin" />
 					<p>Sign in</p>
@@ -30,7 +30,7 @@
 					<p>eng</p>
 					<img src="@/assets/img/mark.svg" alt="selectLang" />
 				</div>
-			</aside>
+			</section>
 		</div>
 	</header>
 </template>
@@ -82,10 +82,13 @@
 		width: 100%;
 		z-index: 1200;
 	}
-	img {
-		width: 9.25rem;
-		height: auto;
-		line-height: 0;
+	aside {
+		width: 10rem;
+		height: 3.5rem;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-image: url('../../assets/img/logo.svg');
 	}
 	nav {
 		display: flex;
@@ -98,7 +101,7 @@
 			@include a;
 		}
 	}
-	aside {
+	section {
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-end;
