@@ -98,6 +98,7 @@
 			padding: 0 2rem 0 2rem;
 			font-size: 1.5rem;
 			line-height: 130%;
+			opacity: 0.7;
 		}
 	}
 </style>
