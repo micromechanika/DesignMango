@@ -16,10 +16,8 @@
 					placeholder="www.google.com"
 				/>
 				<button type="submit">
-					<div>
-						<img src="@/assets/img/blackBow.svg" alt="blackBow" />
-						<p>Let’s Check!</p>
-					</div>
+					<aside />
+					<p>Let’s Check!</p>
 				</button>
 			</form>
 		</section>
@@ -105,20 +103,28 @@
 			background-color: $green;
 			padding: 0;
 			margin: 0;
-			p {
+			position: relative;
+
+			aside {
 				position: absolute;
+				width: 1.4rem;
+				height: 1.4rem;
+				top: 0.3125rem;
+				right: 0.1875rem;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-image: url('../../assets/img/blackBow.svg');
+			}
+
+			p {
+				margin: 0;
+				position: absolute;
+				display: block;
 				left: 0.1625rem;
 				bottom: 0.1375rem;
 				color: $bg;
 				font-size: 1.25rem;
-			}
-			img {
-				position: absolute;
-				margin: 0;
-				width: 1.4rem;
-				height: auto;
-				top: 0.3125rem;
-				right: 0.1875rem;
 			}
 		}
 	}

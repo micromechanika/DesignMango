@@ -3,7 +3,7 @@
 		<h2>Our <span>works</span></h2>
 		<section>
 			<button>
-				<img src="@/assets/img/blackBow.svg" alt="blackBow" />
+				<aside />
 				<div class="text">
 					<p>Yam-Yam</p>
 					<p>Bakery Website</p>
@@ -107,15 +107,16 @@
 
 		border: 0;
 		padding: 0;
-
-		img {
-			box-sizing: border-box;
-			position: absolute;
-			display: block;
-			top: 2%;
-			right: 2%;
+		aside {
 			width: 4rem;
 			height: 4rem;
+			position: absolute;
+			top: 2%;
+			right: 2%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-image: url('../../assets/img/blackBow.svg');
 		}
 		.text {
 			display: flex;
@@ -129,6 +130,7 @@
 				font-weight: 500;
 				font-size: 4rem;
 				line-height: 130%;
+				color: $bg;
 			}
 		}
 	}

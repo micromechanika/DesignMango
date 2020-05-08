@@ -9,7 +9,7 @@
 		<div class="container">
 			<h1>Your customers need <span>a website!</span></h1>
 			<button>
-				<img src="@/assets/img/blackBow.svg" alt="blackBow" />
+				<aside />
 				<p>Get Started</p>
 			</button>
 		</div>
@@ -90,15 +90,18 @@
 			border: 0;
 			padding: 0;
 
-			img {
-				box-sizing: border-box;
+			aside {
 				position: absolute;
-				display: block;
 				top: 1rem;
 				left: 16rem;
 				width: 1rem;
 				height: 1rem;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-image: url('../../assets/img/blackBow.svg');
 			}
+
 			p {
 				box-sizing: border-box;
 				display: block;
@@ -107,6 +110,7 @@
 				bottom: 1rem;
 				font-size: 2rem;
 				margin: 0;
+				color: $bg;
 			}
 		}
 	}

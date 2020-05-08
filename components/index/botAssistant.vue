@@ -1,8 +1,6 @@
 <template>
 	<div class="botAssistant">
-		<aside>
-			<img src="@/assets/img/botAssistant.svg" alt="botAssistant" />
-		</aside>
+		<aside />
 		<article>
 			<div class="message">
 				<h2>Your personal</h2>
@@ -32,14 +30,10 @@
 	aside {
 		width: 50%;
 		height: 100%;
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: flex-start;
-		img {
-			width: 100%;
-			height: 100%;
-		}
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-image: url('../../assets/img/botAssistant.svg');
 	}
 	article {
 		width: 50%;
