@@ -5,7 +5,9 @@
 				:class="['button', { active: selected === item && selected != null }]"
 			>
 				<h3>{{ item.head }}</h3>
-				<img src="@/assets/img/mark.svg" alt="mark" />
+				<aside
+					:class="[selected === item && selected != null ? 'open' : 'close']"
+				/>
 			</div>
 			<p v-show="selected === item && selected != null">
 				{{ item.description }}
@@ -35,6 +37,9 @@
 				},
 			},
 		},
+		data() {
+			return {}
+		},
 	}
 </script>
 
@@ -60,10 +65,24 @@
 				line-height: 130%;
 			}
 
-			img {
+			aside {
 				width: 1.35rem;
-				height: auto;
+				height: 1.35rem;
 			}
+		}
+		.open,
+		.close {
+			width: 100%;
+			height: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+		.close {
+			background-image: url('../../assets/img/mark.svg');
+		}
+		.open {
+			background-image: url('../../assets/img/greenMark.svg');
 		}
 
 		.active {
