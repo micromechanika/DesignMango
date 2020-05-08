@@ -5,21 +5,11 @@
 				<aside />
 			</nuxt-link>
 			<nav>
-				<nuxt-link to="/">
-					<p>Web-design</p>
-				</nuxt-link>
-				<nuxt-link to="/seo">
-					<p>SEO</p>
-				</nuxt-link>
-				<nuxt-link to="/marketing">
-					<p>Marketing</p>
-				</nuxt-link>
-				<nuxt-link to="/preise">
-					<p>Preise</p>
-				</nuxt-link>
-				<nuxt-link to="/referenzen">
-					<p>Referenzen</p>
-				</nuxt-link>
+				<ul>
+					<li v-for="(item, menuKey) in navMenu" :key="menuKey">
+						<nuxt-link :to="item.link">{{ item.title }}</nuxt-link>
+					</li>
+				</ul>
 			</nav>
 			<section>
 				<div class="button">
@@ -50,6 +40,21 @@
 				},
 			},
 		},
+		props: {
+			navMenu: {
+				type: Array,
+				default() {
+					return [
+						{ title: 'Web-design', link: '/' },
+						{ title: 'SEO', link: '/seo' },
+						{ title: 'Marketing', link: '/marketing' },
+						{ title: 'Preise', link: '/preise' },
+						{ title: 'Referenzen', link: '/referenzen' },
+					]
+				},
+			},
+		},
+
 		computed: {},
 		methods: {
 			handleScroll(evt, el) {
@@ -91,13 +96,20 @@
 		background-image: url('../../assets/img/logo.svg');
 	}
 	nav {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-around;
-		font-size: 1rem;
-		line-height: 1.25rem;
-		a {
-			margin: 0 1.875rem;
+		ul {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			li {
+				a {
+					font-size: 1rem;
+					line-height: 1.25rem;
+					margin: 0 1.875rem;
+				}
+				&::marker {
+					display: none;
+				}
+			}
 		}
 	}
 	section {

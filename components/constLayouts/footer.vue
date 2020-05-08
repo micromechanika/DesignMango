@@ -10,7 +10,7 @@
 						<h2>{{ menu.h2 }}</h2>
 						<ul>
 							<li v-for="(list, listKey) in menu.ul" :key="listKey">
-								<nuxt-link to="/">{{ list }}</nuxt-link>
+								<nuxt-link :to="`/${list}`">{{ list }}</nuxt-link>
 							</li>
 						</ul>
 					</section>
@@ -117,12 +117,14 @@
 	hr {
 		margin: 2rem 0;
 		width: 100%;
-		height: 0.01rem;
+		border: 0;
+		font-size: 0;
+		height: 0.1rem;
 		line-height: 0;
 		background-color: $white;
 	}
 	.end {
-		margin: 2rem 0;
+		margin: 0 0 3.1875rem 0;
 		width: 100%;
 		display: flex;
 		flex-direction: row;
