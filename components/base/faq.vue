@@ -1,11 +1,18 @@
 <template>
 	<li>
 		<article>
-			<div class="button" :class="{ active: isSelected === item && isSelected != null }">
+			<div
+				:class="[
+					'button',
+					{ active: isSelected === item && isSelected != null },
+				]"
+			>
 				<h3>{{ item.head }}</h3>
 				<img src="@/assets/img/mark.svg" alt="mark" />
 			</div>
-			<p v-show="isSelected === item && isSelected != null">{{ item.description }}</p>
+			<p v-show="isSelected === item && isSelected != null">
+				{{ item.description }}
+			</p>
 		</article>
 	</li>
 </template>

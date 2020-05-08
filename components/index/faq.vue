@@ -8,16 +8,22 @@
 			<a href="">Contact us!</a>
 		</article>
 		<ul>
-			<itemLi v-for="(item, idx) in FAQS" :key="idx" :item="item" :is-selected="selectedItem" @click.native="handleClick(item)" />
+			<Li
+				v-for="(faq, faqKey) in FAQS"
+				:key="faqKey"
+				:item="faq"
+				:is-selected="selectedItem"
+				@click.native="handleClick(faq)"
+			/>
 		</ul>
 	</div>
 </template>
 
 <script>
-	import itemLi from '../base/faq'
+	import Li from '../base/faq'
 	export default {
 		name: 'Faq',
-		components: { itemLi },
+		components: { Li },
 		props: {
 			// eslint-disable-next-line vue/prop-name-casing
 			FAQS: {
@@ -55,11 +61,7 @@
 		},
 		methods: {
 			handleClick(item) {
-				if (this.selectedItem !== item) {
-					this.selectedItem = item
-				} else {
-					this.selectedItem = ''
-				}
+				this.selectedItem = this.selectedItem !== item ? item : null
 			},
 		},
 	}
