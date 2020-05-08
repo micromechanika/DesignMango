@@ -105,9 +105,6 @@
 					line-height: 1.25rem;
 					margin: 0 1.875rem;
 				}
-				&::marker {
-					display: none;
-				}
 			}
 		}
 	}

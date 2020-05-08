@@ -29,4 +29,8 @@
 	body {
 		background-color: $bg;
 	}
+
+	ul {
+		list-style-type: none;
+	}
 </style>

@@ -5,7 +5,7 @@
 			<h3>Asked</h3>
 			<h4>Questions</h4>
 			<h6>Haven’t found what you’re looking for?</h6>
-			<a href="">Contact us!</a>
+			<nuxt-link to="/">Contact us!</nuxt-link>
 		</article>
 		<ul>
 			<Li
@@ -106,9 +106,6 @@
 		flex-direction: column;
 		li {
 			margin: 1rem 0;
-			&::marker {
-				display: none;
-			}
 		}
 	}
 </style>

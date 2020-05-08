@@ -1,38 +1,36 @@
 <template>
 	<footer>
-		<div class="container">
-			<div class="footerBar">
-				<nuxt-link to="/">
-					<aside />
-				</nuxt-link>
-				<nav>
-					<section v-for="(menu, navKey) in navMenu" :key="navKey">
-						<h2>{{ menu.h2 }}</h2>
-						<ul>
-							<li v-for="(list, listKey) in menu.ul" :key="listKey">
-								<nuxt-link :to="`/${list}`">{{ list }}</nuxt-link>
-							</li>
-						</ul>
-					</section>
-				</nav>
+		<div class="footerBar">
+			<nuxt-link to="/">
+				<aside />
+			</nuxt-link>
+			<nav>
+				<section v-for="(menu, navKey) in navMenu" :key="navKey">
+					<h2>{{ menu.h2 }}</h2>
+					<ul>
+						<li v-for="(list, listKey) in menu.ul" :key="listKey">
+							<nuxt-link :to="`/${list}`">{{ list }}</nuxt-link>
+						</li>
+					</ul>
+				</section>
+			</nav>
+		</div>
+		<hr />
+		<div class="end">
+			<div class="copyright">
+				<p>
+					Copyright © 2020
+					<nuxt-link to="/">Mango Development</nuxt-link>
+					| All rights reserved.
+				</p>
 			</div>
-			<hr />
-			<div class="end">
-				<div class="copyright">
-					<p>
-						Copyright © 2020
-						<nuxt-link to="/">Mango Development</nuxt-link>
-						| All rights reserved.
-					</p>
-				</div>
-				<div class="privacy">
-					<nuxt-link to="/">
-						Privacy Policy
-					</nuxt-link>
-					<nuxt-link to="/">
-						Terms and conditions
-					</nuxt-link>
-				</div>
+			<div class="privacy">
+				<nuxt-link to="/">
+					Privacy Policy
+				</nuxt-link>
+				<nuxt-link to="/">
+					Terms and conditions
+				</nuxt-link>
 			</div>
 		</div>
 	</footer>
@@ -52,6 +50,8 @@
 						{ h2: 'Get in touch', ul: ['Facebook', 'Instagram', 'Twitter'] },
 						{ h2: 'Company', ul: ['About us', 'Team', 'Careers'] },
 						{ h2: 'Company', ul: ['About us', 'Team', 'Careers'] },
+						{ h2: 'Company', ul: ['About us', 'Team', 'Careers'] },
+						{ h2: 'Company', ul: ['About us', 'Team', 'Careers'] },
 					]
 				},
 			},
@@ -61,9 +61,6 @@
 
 <style lang="scss" scoped>
 	footer {
-		width: 100%;
-	}
-	.container {
 		@include container;
 	}
 	.footerBar {
@@ -71,6 +68,7 @@
 		display: flex;
 		flex-direction: row;
 		align-items: flex-start;
+		justify-content: space-between;
 	}
 	aside {
 		margin: 2rem 0;
@@ -82,12 +80,14 @@
 		background-image: url('../../assets/img/logo.svg');
 	}
 	nav {
+		width: 80%;
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-end;
 		flex-wrap: wrap;
 	}
 	section {
+		width: 10%;
 		margin: 2rem 3.75rem;
 		color: $white;
 		display: flex;
@@ -108,9 +108,6 @@
 			a {
 				font-size: 1.25rem;
 				line-height: 130%;
-			}
-			&::marker {
-				display: none;
 			}
 		}
 	}
