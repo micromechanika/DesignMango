@@ -20,7 +20,7 @@
 
 <script>
 	export default {
-		name: 'footer',
+		name: 'Footer',
 		props: {
 			navMenu: {
 				type: Array,
