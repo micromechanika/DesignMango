@@ -19,14 +19,30 @@
 				type: Array,
 				default() {
 					return [
-						{ h3: 'Advanced ', h4: 'technologies', p: 'Our developers use advanced technologies in website development.' },
+						{
+							h3: 'Advanced ',
+							h4: 'technologies',
+							p:
+								'Our developers use advanced technologies in website development.',
+						},
 						{
 							h3: 'Excellent ',
 							h4: 'SEO',
-							p: 'We work with the best SEO in Europe. You do not need to think about attracting new customers - we will take care of everything!',
+							p:
+								'We work with the best SEO in Europe. You do not need to think about attracting new customers - we will take care of everything!',
 						},
-						{ h3: 'FULL', h4: 'SERVICE', p: 'We provide full service of your website from the beginning of our cooperation!' },
-						{ h3: 'BEST', h4: 'PRICE EVER', p: 'Do you think that having unique website in 2020 is expensive? Not at all! Our price - 29 EUR/MONTH' },
+						{
+							h3: 'FULL',
+							h4: 'SERVICE',
+							p:
+								'We provide full service of your website from the beginning of our cooperation!',
+						},
+						{
+							h3: 'BEST',
+							h4: 'PRICE EVER',
+							p:
+								'Do you think that having unique website in 2020 is expensive? Not at all! Our price - 29 EUR/MONTH',
+						},
 					]
 				},
 			},

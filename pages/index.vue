@@ -29,7 +29,17 @@
 	import Package from '../components/index/package'
 	import Faq from '../components/index/faq'
 	export default {
-		components: { Video, Certificates, TestSpeed, CallAction, OurWorks, Slider, BotAssistant, Package, Faq },
+		components: {
+			Video,
+			Certificates,
+			TestSpeed,
+			CallAction,
+			OurWorks,
+			Slider,
+			BotAssistant,
+			Package,
+			Faq,
+		},
 	}
 </script>
 

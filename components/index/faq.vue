@@ -9,10 +9,10 @@
 		</article>
 		<ul>
 			<Li
-				v-for="(faq, faqKey) in FAQS"
+				v-for="(faq, faqKey) in faqs"
 				:key="faqKey"
 				:item="faq"
-				:is-selected="selectedItem"
+				:selected="selectedItem"
 				@click.native="handleClick(faq)"
 			/>
 		</ul>
@@ -20,13 +20,12 @@
 </template>
 
 <script>
-	import Li from '../base/faq'
+	import Li from '../base/liFaq'
 	export default {
 		name: 'Faq',
 		components: { Li },
 		props: {
-			// eslint-disable-next-line vue/prop-name-casing
-			FAQS: {
+			faqs: {
 				type: Array,
 				default() {
 					return [
@@ -107,6 +106,9 @@
 		flex-direction: column;
 		li {
 			margin: 1rem 0;
+			&::marker {
+				display: none;
+			}
 		}
 	}
 </style>

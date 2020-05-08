@@ -51,13 +51,34 @@
 					return [
 						{
 							img: {
-								'3840': { src: 'img/slider/slide1/slide500.jpeg', alt: 'slide500' },
-								'1600': { src: 'img/slider/slide1/slide500.jpeg', alt: 'slide500' },
-								'1440': { src: 'img/slider/slide1/slide500.jpeg', alt: 'slide500' },
-								'1024': { src: 'img/slider/slide1/slide500.jpeg', alt: 'slide500' },
-								'800': { src: 'img/slider/slide1/slide400.jpeg', alt: 'slide400' },
-								'700': { src: 'img/slider/slide1/slide300.jpeg', alt: 'slide300' },
-								'400': { src: 'img/slider/slide1/slide200.jpeg', alt: 'slide200' },
+								'3840': {
+									src: 'img/slider/slide1/slide500.jpeg',
+									alt: 'slide500',
+								},
+								'1600': {
+									src: 'img/slider/slide1/slide500.jpeg',
+									alt: 'slide500',
+								},
+								'1440': {
+									src: 'img/slider/slide1/slide500.jpeg',
+									alt: 'slide500',
+								},
+								'1024': {
+									src: 'img/slider/slide1/slide500.jpeg',
+									alt: 'slide500',
+								},
+								'800': {
+									src: 'img/slider/slide1/slide400.jpeg',
+									alt: 'slide400',
+								},
+								'700': {
+									src: 'img/slider/slide1/slide300.jpeg',
+									alt: 'slide300',
+								},
+								'400': {
+									src: 'img/slider/slide1/slide200.jpeg',
+									alt: 'slide200',
+								},
 							},
 							description: {
 								h6: 'First step',
@@ -66,20 +87,53 @@
 									'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin proin adipiscing mi dictum scelerisque eget. Porttitor adipiscing rhoncus mattis felis semper mattis tempus nullam.',
 							},
 							cards: [
-								{ h3: 'Personal', h4: 'designer', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-								{ h3: 'preference', h4: 'consideration ', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-								{ h3: 'keyword', h4: 'pre-cheking', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+								{
+									h3: 'Personal',
+									h4: 'designer',
+									p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+								},
+								{
+									h3: 'preference',
+									h4: 'consideration ',
+									p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+								},
+								{
+									h3: 'keyword',
+									h4: 'pre-cheking',
+									p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+								},
 							],
 						},
 						{
 							img: {
-								'3840': { src: 'img/slider/slide2/slide500.jpeg', alt: 'slide500' },
-								'1600': { src: 'img/slider/slide2/slide500.jpeg', alt: 'slide500' },
-								'1440': { src: 'img/slider/slide2/slide500.jpeg', alt: 'slide500' },
-								'1024': { src: 'img/slider/slide2/slide500.jpeg', alt: 'slide500' },
-								'800': { src: 'img/slider/slide2/slide400.jpeg', alt: 'slide400' },
-								'700': { src: 'img/slider/slide2/slide300.jpeg', alt: 'slide300' },
-								'400': { src: 'img/slider/slide2/slide200.jpeg', alt: 'slide200' },
+								'3840': {
+									src: 'img/slider/slide2/slide500.jpeg',
+									alt: 'slide500',
+								},
+								'1600': {
+									src: 'img/slider/slide2/slide500.jpeg',
+									alt: 'slide500',
+								},
+								'1440': {
+									src: 'img/slider/slide2/slide500.jpeg',
+									alt: 'slide500',
+								},
+								'1024': {
+									src: 'img/slider/slide2/slide500.jpeg',
+									alt: 'slide500',
+								},
+								'800': {
+									src: 'img/slider/slide2/slide400.jpeg',
+									alt: 'slide400',
+								},
+								'700': {
+									src: 'img/slider/slide2/slide300.jpeg',
+									alt: 'slide300',
+								},
+								'400': {
+									src: 'img/slider/slide2/slide200.jpeg',
+									alt: 'slide200',
+								},
 							},
 							description: {
 								h6: 'Second step',
@@ -88,20 +142,53 @@
 									'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin proin adipiscing mi dictum scelerisque eget. Porttitor adipiscing rhoncus mattis felis semper mattis tempus nullam.',
 							},
 							cards: [
-								{ h3: 'Personal', h4: 'designer', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-								{ h3: 'preference', h4: 'consideration ', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-								{ h3: 'keyword', h4: 'pre-cheking', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+								{
+									h3: 'Personal',
+									h4: 'designer',
+									p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+								},
+								{
+									h3: 'preference',
+									h4: 'consideration ',
+									p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+								},
+								{
+									h3: 'keyword',
+									h4: 'pre-cheking',
+									p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+								},
 							],
 						},
 						{
 							img: {
-								'3840': { src: 'img/slider/slide3/slide500.jpeg', alt: 'slide500' },
-								'1600': { src: 'img/slider/slide3/slide500.jpeg', alt: 'slide500' },
-								'1440': { src: 'img/slider/slide3/slide500.jpeg', alt: 'slide500' },
-								'1024': { src: 'img/slider/slide3/slide500.jpeg', alt: 'slide500' },
-								'800': { src: 'img/slider/slide3/slide400.jpeg', alt: 'slide400' },
-								'700': { src: 'img/slider/slide3/slide300.jpeg', alt: 'slide300' },
-								'400': { src: 'img/slider/slide3/slide200.jpeg', alt: 'slide200' },
+								'3840': {
+									src: 'img/slider/slide3/slide500.jpeg',
+									alt: 'slide500',
+								},
+								'1600': {
+									src: 'img/slider/slide3/slide500.jpeg',
+									alt: 'slide500',
+								},
+								'1440': {
+									src: 'img/slider/slide3/slide500.jpeg',
+									alt: 'slide500',
+								},
+								'1024': {
+									src: 'img/slider/slide3/slide500.jpeg',
+									alt: 'slide500',
+								},
+								'800': {
+									src: 'img/slider/slide3/slide400.jpeg',
+									alt: 'slide400',
+								},
+								'700': {
+									src: 'img/slider/slide3/slide300.jpeg',
+									alt: 'slide300',
+								},
+								'400': {
+									src: 'img/slider/slide3/slide200.jpeg',
+									alt: 'slide200',
+								},
 							},
 							description: {
 								h6: 'Third step',
@@ -110,9 +197,21 @@
 									'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin proin adipiscing mi dictum scelerisque eget. Porttitor adipiscing rhoncus mattis felis semper mattis tempus nullam.',
 							},
 							cards: [
-								{ h3: 'Personal', h4: 'designer', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-								{ h3: 'preference', h4: 'consideration ', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-								{ h3: 'keyword', h4: 'pre-cheking', p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+								{
+									h3: 'Personal',
+									h4: 'designer',
+									p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+								},
+								{
+									h3: 'preference',
+									h4: 'consideration ',
+									p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+								},
+								{
+									h3: 'keyword',
+									h4: 'pre-cheking',
+									p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+								},
 							],
 						},
 					]

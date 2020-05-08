@@ -1,6 +1,11 @@
 <template>
 	<div class="certificates">
-		<img v-for="(img, index) in techologiesImages" :key="index" :src="require(`@/assets/img/certificates/${img.src}`)" :alt="`${img.alt}`" />
+		<img
+			v-for="(img, index) in techologiesImages"
+			:key="index"
+			:src="require(`@/assets/img/certificates/${img.src}`)"
+			:alt="`${img.alt}`"
+		/>
 	</div>
 </template>
 

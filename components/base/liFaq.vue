@@ -2,15 +2,12 @@
 	<li>
 		<article>
 			<div
-				:class="[
-					'button',
-					{ active: isSelected === item && isSelected != null },
-				]"
+				:class="['button', { active: selected === item && selected != null }]"
 			>
 				<h3>{{ item.head }}</h3>
 				<img src="@/assets/img/mark.svg" alt="mark" />
 			</div>
-			<p v-show="isSelected === item && isSelected != null">
+			<p v-show="selected === item && selected != null">
 				{{ item.description }}
 			</p>
 		</article>
@@ -19,7 +16,7 @@
 
 <script>
 	export default {
-		name: 'Faq',
+		name: 'LiFaq',
 		props: {
 			item: {
 				type: Object,
@@ -31,7 +28,7 @@
 					}
 				},
 			},
-			isSelected: {
+			selected: {
 				type: null,
 				default() {
 					return null
@@ -56,18 +53,22 @@
 			align-items: center;
 			border-bottom: 0.0625rem solid $white;
 			padding: 0 2rem 0 2em;
+
 			h3 {
 				font-weight: 600;
 				font-size: 1.5rem;
 				line-height: 130%;
 			}
+
 			img {
 				width: 1.35rem;
 				height: auto;
 			}
 		}
+
 		.active {
 			border-bottom: 0.0625rem solid transparent;
+
 			h3 {
 				color: $green;
 			}

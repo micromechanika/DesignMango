@@ -3,12 +3,18 @@
 		<h2>Why is your bussines <span>need a website?</span></h2>
 		<section>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna nec pulvinar praesent sed viverra quam malesuada et. Fusce enim, quis habitant
-				ut sed a non, ac non.
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna nec
+				pulvinar praesent sed viverra quam malesuada et. Fusce enim, quis
+				habitant ut sed a non, ac non.
 			</p>
 			<form>
 				<label for="checkSite">checkSite</label>
-				<input id="checkSite" type="text" name="checkSite" placeholder="www.google.com" />
+				<input
+					id="checkSite"
+					type="text"
+					name="checkSite"
+					placeholder="www.google.com"
+				/>
 				<button type="submit">
 					<div>
 						<img src="@/assets/img/blackBow.svg" alt="blackBow" />

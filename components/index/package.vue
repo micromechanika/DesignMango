@@ -5,10 +5,18 @@
 			<h3>perfect package</h3>
 		</div>
 		<section>
-			<article v-for="(item, pakageKey) in packages" :key="pakageKey" :class="pakageKey === 1 ? 'active' : ''">
+			<article
+				v-for="(item, pakageKey) in packages"
+				:key="pakageKey"
+				:class="pakageKey === 1 ? 'active' : ''"
+			>
 				<div class="info">
 					<h2>{{ item.name }}</h2>
-					<div v-for="(include, includeKey) in item.includes" :key="includeKey" class="inPackage">
+					<div
+						v-for="(include, includeKey) in item.includes"
+						:key="includeKey"
+						class="inPackage"
+					>
 						<img src="@/assets/img/like.svg" alt="like" />
 						<h3>{{ include.offers }}</h3>
 					</div>
@@ -36,21 +44,33 @@
 					return [
 						{
 							name: 'Pro',
-							includes: [{ offers: 'Own domain to connect' }, { offers: 'Own domain to connect' }, { offers: 'Visitor statistics' }],
+							includes: [
+								{ offers: 'Own domain to connect' },
+								{ offers: 'Own domain to connect' },
+								{ offers: 'Visitor statistics' },
+							],
 							curensy: '$',
 							rate: '69,99',
 							time: 'mo',
 						},
 						{
 							name: 'Business',
-							includes: [{ offers: 'Own domain to connect' }, { offers: 'Own domain to connect' }, { offers: 'Visitor statistics' }],
+							includes: [
+								{ offers: 'Own domain to connect' },
+								{ offers: 'Own domain to connect' },
+								{ offers: 'Visitor statistics' },
+							],
 							curensy: '$',
 							rate: '39,99',
 							time: 'mo',
 						},
 						{
 							name: 'Starter',
-							includes: [{ offers: 'Own domain to connect' }, { offers: 'Own domain to connect' }, { offers: 'Visitor statistics' }],
+							includes: [
+								{ offers: 'Own domain to connect' },
+								{ offers: 'Own domain to connect' },
+								{ offers: 'Visitor statistics' },
+							],
 							curensy: '$',
 							rate: '29,99',
 							time: 'mo',

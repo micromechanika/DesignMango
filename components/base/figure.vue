@@ -1,6 +1,10 @@
 <template>
 	<figure :style="{ backgroundImage: `url(${suitablePicture.src});` }">
-		<img :src="`${suitablePicture.src}`" :srcset="`${suitablePicture.src}`" :alt="`${suitablePicture.alt}`" />
+		<img
+			:src="`${suitablePicture.src}`"
+			:srcset="`${suitablePicture.src}`"
+			:alt="`${suitablePicture.alt}`"
+		/>
 	</figure>
 </template>
 

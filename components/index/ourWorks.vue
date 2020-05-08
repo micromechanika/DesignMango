@@ -10,7 +10,11 @@
 				</div>
 			</button>
 			<div class="examples">
-				<Figure v-for="(work, workKey) in examples" :key="workKey" :figures="work" />
+				<Figure
+					v-for="(work, workKey) in examples"
+					:key="workKey"
+					:figures="work"
+				/>
 			</div>
 		</section>
 	</div>
