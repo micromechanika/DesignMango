@@ -48,10 +48,6 @@
 						{ h2: 'Support', ul: ['About us', 'Team', 'Careers'] },
 						{ h2: 'Services', ul: ['About us', 'Team', 'Careers'] },
 						{ h2: 'Get in touch', ul: ['Facebook', 'Instagram', 'Twitter'] },
-						{ h2: 'Company', ul: ['About us', 'Team', 'Careers'] },
-						{ h2: 'Company', ul: ['About us', 'Team', 'Careers'] },
-						{ h2: 'Company', ul: ['About us', 'Team', 'Careers'] },
-						{ h2: 'Company', ul: ['About us', 'Team', 'Careers'] },
 					]
 				},
 			},
@@ -80,14 +76,14 @@
 		background-image: url('../../assets/img/logo.svg');
 	}
 	nav {
-		width: 80%;
+		width: 90%;
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-end;
 		flex-wrap: wrap;
 	}
 	section {
-		width: 10%;
+		width: auto;
 		margin: 2rem 3.75rem;
 		color: $white;
 		display: flex;
