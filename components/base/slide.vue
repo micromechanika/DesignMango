@@ -21,7 +21,7 @@
 <script>
 	import Figure from './figure'
 	export default {
-		name: 'slide',
+		name: 'Slide',
 		components: { Figure },
 		props: {
 			slide: {
