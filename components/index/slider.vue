@@ -6,35 +6,27 @@
 				<span> {{ message.span }} </span>
 			</h2>
 		</div>
-		<div v-for="(slide, slideID) in sliders" :key="slideID" class="sliders">
-			<Figure :figures="slide.img" />
-			<section>
-				<div class="description">
-					<h6>{{ slide.description.h6 }}</h6>
-					<h2>{{ slide.description.h2 }}</h2>
-					<p>{{ slide.description.p }}</p>
-				</div>
-				<div class="cards">
-					<article v-for="(card, cardID) in slide.cards" :key="cardID">
-						<h3>{{ card.h3 }}</h3>
-						<h4>{{ card.h4 }}</h4>
-						<p>{{ card.p }}</p>
-					</article>
-				</div>
-			</section>
-		</div>
+		<Slide :slide="sliders[currentIndex]" />
 		<aside>
-			<img src="../../assets/img/pointerLeft.svg" alt="leftPointer" />
-			<img src="../../assets/img/pointerRight.svg" alt="rightPointer" />
+			<img
+				src="../../assets/img/pointerLeft.svg"
+				alt="leftPointer"
+				@click="stepLeft"
+			/>
+			<img
+				src="../../assets/img/pointerRight.svg"
+				alt="rightPointer"
+				@click="stepRight"
+			/>
 		</aside>
 	</div>
 </template>
 
 <script>
-	import Figure from '../base/figure'
+	import Slide from '../base/slide'
 	export default {
 		name: 'Slider',
-		components: { Figure },
+		components: { Slide },
 		props: {
 			message: {
 				type: Object,
@@ -218,6 +210,21 @@
 				},
 			},
 		},
+		data() {
+			return {
+				currentIndex: 0,
+			}
+		},
+		methods: {
+			stepRight() {
+				this.currentIndex += 1
+				console.log(this.currentIndex)
+			},
+			stepLeft() {
+				this.currentIndex -= 1
+				console.log(this.currentIndex)
+			},
+		},
 	}
 </script>
 
@@ -261,95 +268,6 @@
 			color: $white;
 			span {
 				color: $green;
-			}
-		}
-	}
-	.sliders {
-		width: 100%;
-		height: 100%;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
-		figure {
-			width: 34%;
-			height: 100%;
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
-		}
-		section {
-			width: 66%;
-			height: 100%;
-			margin: 0 5vw;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
-	}
-	.description {
-		width: 100%;
-		height: 50%;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-		margin: 0 0 5rem 0;
-		color: $white;
-		h6 {
-			font-size: 1rem;
-			line-height: 1.5rem;
-			margin: 0 0 0.25rem 0;
-		}
-		h2 {
-			font-weight: 500;
-			font-size: 4rem;
-			line-height: 130%;
-			margin: 0 0 2rem 0;
-		}
-		p {
-			font-size: 1.25rem;
-			line-height: 130%;
-			margin: 0;
-		}
-	}
-	.cards {
-		width: 100%;
-		height: 50%;
-		color: $white;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: flex-start;
-		margin: 5rem 0 0 0;
-		article {
-			word-break: break-word;
-			width: 33.333333%;
-			height: 100%;
-			margin: 0 2rem;
-			h3 {
-				font-size: 1.5rem;
-				line-height: 130%;
-				text-transform: uppercase;
-			}
-			h4 {
-				font-size: 1.5rem;
-				line-height: 130%;
-				text-transform: uppercase;
-				color: $green;
-				margin: 0 0 2.6875rem 0;
-			}
-			p {
-				font-size: 1rem;
-				line-height: 1.5rem;
-			}
-			&:first-of-type {
-				margin-left: 0;
-			}
-			&:last-of-type {
-				margin-right: 0;
 			}
 		}
 	}
