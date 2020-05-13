@@ -6,7 +6,7 @@
 
 <script>
 	export default {
-		name: 'maketorether',
+		name: 'Maketorether',
 	}
 </script>
 
