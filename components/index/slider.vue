@@ -1,12 +1,12 @@
 <template>
 	<div class="slider">
-		<div class="message">
+		<div v-show="mes" class="message">
 			<h2>
 				{{ message.h2 }}
 				<span> {{ message.span }} </span>
 			</h2>
 		</div>
-		<Slide :slide="sliders[currentIndex]" />
+		<Slide v-show="!mes" :slide="sliders[currentIndex]" />
 		<aside>
 			<img
 				src="../../assets/img/pointerLeft.svg"
@@ -212,17 +212,23 @@
 		},
 		data() {
 			return {
+				mes: true,
 				currentIndex: 0,
 			}
 		},
 		methods: {
 			stepRight() {
-				this.currentIndex += 1
-				console.log(this.currentIndex)
+				if (this.currentIndex < this.sliders.length - 1) {
+					this.mes = false
+					this.currentIndex += 1
+				}
 			},
 			stepLeft() {
-				this.currentIndex -= 1
-				console.log(this.currentIndex)
+				if (this.currentIndex !== 0) {
+					this.currentIndex -= 1
+				} else {
+					this.mes = true
+				}
 			},
 		},
 	}
@@ -233,6 +239,7 @@
 		margin: 12.5rem auto;
 		position: relative;
 		width: 100%;
+		height: 80vh;
 	}
 	aside {
 		position: absolute;
@@ -272,4 +279,3 @@
 		}
 	}
 </style>
-<!--TODO: fix bug in slider height-->
