@@ -9,7 +9,7 @@
 <script>
 	import Packajes from '../base/packajes'
 	export default {
-		name: 'price',
+		name: 'Price',
 		components: { Packajes },
 	}
 </script>

@@ -17,7 +17,11 @@ module.exports = {
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-			{ hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
+			{
+				hid: 'description',
+				name: 'description',
+				content: process.env.npm_package_description || '',
+			},
 		],
 		link: [
 			{ rel: 'canonical', href: process.env.BASE_URL },
@@ -41,8 +45,18 @@ module.exports = {
 		scss: ['@/assets/style/main.scss'],
 	},
 	plugins: [],
-	buildModules: ['@nuxtjs/eslint-module', 'nuxt-purgecss', '@nuxtjs/google-analytics'],
-	modules: ['@nuxtjs/axios', '@nuxtjs/style-resources', 'nuxt-trailingslash-module', '@nuxtjs/sitemap', '@nuxtjs/robots'],
+	buildModules: [
+		'@nuxtjs/eslint-module',
+		'nuxt-purgecss',
+		'@nuxtjs/google-analytics',
+	],
+	modules: [
+		'@nuxtjs/axios',
+		'@nuxtjs/style-resources',
+		'nuxt-trailingslash-module',
+		'@nuxtjs/sitemap',
+		'@nuxtjs/robots',
+	],
 	axios: {},
 	build: {
 		optimizeCss: false,
@@ -50,9 +64,12 @@ module.exports = {
 			app: ({ isDev }) => (isDev ? '[name].js' : 'js/[contenthash].js'),
 			chunk: ({ isDev }) => (isDev ? '[name].js' : 'js/[contenthash].js'),
 			css: ({ isDev }) => (isDev ? '[name].css' : 'css/[contenthash].css'),
-			img: ({ isDev }) => (isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]'),
-			font: ({ isDev }) => (isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]'),
-			video: ({ isDev }) => (isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'),
+			img: ({ isDev }) =>
+				isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]',
+			font: ({ isDev }) =>
+				isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]',
+			video: ({ isDev }) =>
+				isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]',
 		},
 		...(!isDev && {
 			html: {
