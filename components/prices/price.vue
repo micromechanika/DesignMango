@@ -3,11 +3,11 @@
 		<h2>Our <span>prices</span> and packages </h2>
 
 		<section>
-			<h3 :class="{ active: togle }">Monthly</h3>
-			<aside :class="togle ? 'monthly' : 'yearly'">
-				<button @click="togle = !togle" />
+			<h3 :class="{ active: toggle }">Monthly</h3>
+			<aside :class="toggle ? 'monthly' : 'yearly'">
+				<button @click.stop="toggle = !toggle" />
 			</aside>
-			<h3 :class="{ active: !togle }">Yearly</h3>
+			<h3 :class="{ active: !toggle }">Yearly</h3>
 		</section>
 
 		<Packajes />
@@ -21,7 +21,7 @@
 		components: { Packajes },
 		data() {
 			return {
-				togle: false,
+				toggle: false,
 			}
 		},
 		methods: {},
@@ -64,11 +64,10 @@
 			margin-left: 2rem;
 		}
 	}
-
 	aside {
 		margin: 3rem 0;
 		border: 0.1rem solid $green;
-		width: 100px;
+		width: 110px;
 		height: 60px;
 		display: flex;
 		flex-direction: row;
@@ -82,14 +81,12 @@
 			height: 90%;
 		}
 	}
-
 	.active {
 		color: $green;
 	}
 	.monthly {
 		justify-content: flex-start;
 	}
-
 	.yearly {
 		justify-content: flex-end;
 	}
