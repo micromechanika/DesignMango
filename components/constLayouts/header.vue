@@ -57,7 +57,7 @@
 		computed: {},
 		methods: {
 			handleScroll(evt, el) {
-				return window.scrollY >= 400
+				return window.scrollY >= 100
 					? el.setAttribute(
 							'style',
 							'background-color: #05041E; top:0; transition: top; 1s;'

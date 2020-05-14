@@ -1,9 +1,16 @@
 <template>
-	<section> </section>
+	<section>
+		<div class="container">
+			<Price />
+		</div>
+	</section>
 </template>
 
 <script>
-	export default {}
+	import Price from '../components/prices/price'
+	export default {
+		components: { Price },
+	}
 </script>
 
 <style lang="scss">
