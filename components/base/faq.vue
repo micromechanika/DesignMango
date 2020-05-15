@@ -20,7 +20,7 @@
 </template>
 
 <script>
-	import Li from '../base/liFaq'
+	import Li from './liFaq'
 	export default {
 		name: 'Faq',
 		components: { Li },

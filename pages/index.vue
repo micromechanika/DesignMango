@@ -14,7 +14,7 @@
 		<Package />
 		<div class="container">
 			<Faq />
-			<Maketorether />
+			<Maketogether />
 		</div>
 	</section>
 </template>
@@ -28,8 +28,8 @@
 	import Slider from '../components/index/slider'
 	import BotAssistant from '../components/index/botAssistant'
 	import Package from '../components/index/package'
-	import Faq from '../components/index/faq'
-	import Maketorether from '../components/index/maketorether'
+	import Faq from '../components/base/faq'
+	import Maketogether from '../components/index/maketogether'
 	export default {
 		components: {
 			Video,
@@ -41,7 +41,7 @@
 			BotAssistant,
 			Package,
 			Faq,
-			Maketorether,
+			Maketogether,
 		},
 	}
 </script>
