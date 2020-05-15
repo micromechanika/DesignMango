@@ -1,7 +1,6 @@
 <template>
 	<div class="price">
 		<h2>Our <span>prices</span> and packages </h2>
-
 		<section>
 			<h3 :class="{ active: toggle }">Monthly</h3>
 			<aside :class="toggle ? 'monthly' : 'yearly'">
@@ -9,16 +8,12 @@
 			</aside>
 			<h3 :class="{ active: !toggle }">Yearly</h3>
 		</section>
-
-		<Packajes />
 	</div>
 </template>
 
 <script>
-	import Packajes from '../base/packajes'
 	export default {
 		name: 'Price',
-		components: { Packajes },
 		data() {
 			return {
 				toggle: false,
@@ -65,20 +60,19 @@
 		}
 	}
 	aside {
-		margin: 3rem 0;
+		padding: 0.25rem;
 		border: 0.1rem solid $green;
-		width: 110px;
-		height: 60px;
+		width: 10vw;
+		height: 5vw;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 
 		button {
 			background-color: $green;
-			margin: 0.25rem;
 			border: 0.1rem solid $green;
-			width: 48%;
-			height: 90%;
+			width: 50%;
+			height: 100%;
 		}
 	}
 	.active {
