@@ -3,6 +3,7 @@
 		<div class="container">
 			<Price />
 			<Packajes />
+			<FullPriceTabe />
 			<Faq />
 		</div>
 	</section>
@@ -10,10 +11,11 @@
 
 <script>
 	import Price from '../components/prices/price'
+	import FullPriceTabe from '../components/prices/fullPriceTabe'
 	import Packajes from '../components/base/packajes'
 	import Faq from '../components/base/faq'
 	export default {
-		components: { Price, Packajes, Faq },
+		components: { FullPriceTabe, Price, Packajes, Faq },
 	}
 </script>
 
