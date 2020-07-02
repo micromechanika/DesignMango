@@ -32,7 +32,7 @@
 
 <script>
 	export default {
-		name: 'fullPriceTabe',
+		name: 'FullPriceTabe',
 	}
 </script>
 
