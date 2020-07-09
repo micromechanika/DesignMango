@@ -213,12 +213,12 @@
 		data() {
 			return {
 				mes: true,
-				currentIndex: 0,
+				currentIndex: -1,
 			}
 		},
 		methods: {
 			stepRight() {
-				if (this.currentIndex < this.sliders.length - 1) {
+				if (this.currentIndex !== this.sliders.length - 1) {
 					this.mes = false
 					this.currentIndex += 1
 				}
