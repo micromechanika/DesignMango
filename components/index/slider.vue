@@ -228,6 +228,7 @@
 					this.currentIndex -= 1
 				} else {
 					this.mes = true
+					this.currentIndex = -1
 				}
 			},
 		},
