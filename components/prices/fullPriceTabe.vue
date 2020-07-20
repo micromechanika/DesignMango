@@ -7,7 +7,7 @@
 		<table>
 			<thead>
 				<tr>
-					<th> <div class="property">General Futures</div></th>
+					<th><div class="property">General Futures</div></th>
 					<th v-for="(plan, planKey) in plans" :key="planKey">
 						<div class="plan">
 							<div class="name">
@@ -27,7 +27,9 @@
 				<tr v-for="(values, name, nameKey) in properties" :key="nameKey">
 					<td>{{ name }}</td>
 					<td v-for="(value, valueKey) in values" :key="valueKey">
-						{{ value }}
+						<div :class="['propertyValue', selectValueClass(value)]">
+							{{ value }}
+						</div>
 					</td>
 				</tr>
 			</tbody>
@@ -83,6 +85,26 @@
 				},
 			},
 		},
+		methods: {
+			selectValueClass(value) {
+				let selectClass
+				switch (true) {
+					case value === true:
+						selectClass = 'check'
+						break
+					case value === Infinity:
+						selectClass = 'infinity'
+						break
+					case value === null:
+						selectClass = ''
+						break
+					default:
+						selectClass = value
+						break
+				}
+				return selectClass
+			},
+		},
 	}
 </script>
 
@@ -113,12 +135,14 @@
 	}
 
 	thead tr {
-		width: 100%;
+		vertical-align: bottom;
+
 		.property {
 			display: flex;
 			flex-direction: row;
 			justify-content: flex-start;
 		}
+
 		.plan {
 			display: flex;
 			flex-direction: row;
@@ -140,14 +164,22 @@
 	thead th {
 		width: 25%;
 	}
+
 	thead th .plan,
 	thead th .property {
 		margin: 0 1rem 0 1rem;
 		padding: 0 0 1rem 0;
 		border-bottom: 1px solid $white;
 	}
+	tbody td {
+		padding: 2rem 1rem 2rem 1rem;
+		.propertyValue {
+			text-align: center;
+			height: 1rem;
+		}
+	}
 
-	.infinyty,
+	.infinity,
 	.check,
 	.queryWhat {
 		width: 100%;
@@ -155,13 +187,14 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: contain;
+		font-size: 0;
 	}
 
 	.queryWhat {
 		background-image: url('../../assets/img/queryWhat.svg');
 	}
 
-	.infinyty {
+	.infinity {
 		background-image: url('../../assets/img/infinyty.svg');
 	}
 
