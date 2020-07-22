@@ -171,8 +171,19 @@
 		padding: 0 0 1rem 0;
 		border-bottom: 1px solid $white;
 	}
+
 	tbody td {
-		padding: 2rem 1rem 2rem 1rem;
+		padding: 1rem;
+		margin: 3rem;
+		border-bottom: 0.5px solid rgba($white, 0.5);
+		font-weight: 600;
+		font-size: 1rem;
+		line-height: 130%;
+
+		&:first-of-type {
+			border-bottom: 0;
+		}
+
 		.propertyValue {
 			text-align: center;
 			height: 1rem;
@@ -189,15 +200,12 @@
 		background-size: contain;
 		font-size: 0;
 	}
-
 	.queryWhat {
 		background-image: url('../../assets/img/queryWhat.svg');
 	}
-
 	.infinity {
 		background-image: url('../../assets/img/infinyty.svg');
 	}
-
 	.check {
 		background-image: url('../../assets/img/check.svg');
 	}
