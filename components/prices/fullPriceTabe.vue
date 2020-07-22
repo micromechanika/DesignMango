@@ -25,10 +25,14 @@
 			</thead>
 			<tbody>
 				<tr v-for="(values, name, nameKey) in properties" :key="nameKey">
-					<td>{{ name }}</td>
+					<td>
+						<div class="propertyName">
+							{{ name }}
+						</div>
+					</td>
 					<td v-for="(value, valueKey) in values" :key="valueKey">
-						<div :class="['propertyValue', selectValueClass(value)]">
-							{{ value }}
+						<div class="propertyValue">
+							<div :class="selectValueClass(value)">{{ value }}</div>
 						</div>
 					</td>
 				</tr>
@@ -173,20 +177,38 @@
 	}
 
 	tbody td {
-		padding: 1rem;
-		margin: 3rem;
-		border-bottom: 0.5px solid rgba($white, 0.5);
 		font-weight: 600;
 		font-size: 1rem;
 		line-height: 130%;
-
+		vertical-align: middle;
+		padding: 1rem 0 1rem 0;
+		height: 2rem;
 		&:first-of-type {
-			border-bottom: 0;
+			padding-left: 1rem;
+		}
+		&:nth-of-type(2) {
+			padding-left: 1rem;
+		}
+		&:last-of-type {
+			padding-right: 1rem;
 		}
 
+		.propertyName {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: center;
+			padding-bottom: 1rem;
+			height: 2rem;
+		}
 		.propertyValue {
-			text-align: center;
-			height: 1rem;
+			height: 2rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding-bottom: 1rem;
+			border-bottom: 0.5px solid rgba($white, 0.5);
 		}
 	}
 
