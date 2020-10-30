@@ -1,0 +1,33 @@
+
+@mixin font-face($family, $file, $url:null, $type: null, $stretch: normal, $weight: normal, $style: normal, $display: swap, $variant: normal) {
+
+  @font-face {
+    font-family: $family;
+    @if ($type) {
+      src: local($family),
+      url('#{$file}.#{$type}');
+    } @else {
+      src: local($family);
+      src: url('#{$file}.eot');                                    /* IE9 Compat Modes */
+      src: url('#{$file}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+      url('#{$file}.woff2') format('woff2'),                       /* Super Modern Browsers */
+      url('#{$file}.woff') format('woff'),                         /* Pretty Modern Browsers */
+      url('#{$file}.ttf') format('truetype'),                      /* Safari, Android, iOS */
+      url('#{$file}.svg#svgFontName') format('svg'),               /* Legacy iOS */
+      url('#{$url}');                                              /* FROM URL IF NOT FIND ANY FONT*/
+    }
+    font-stretch: $stretch;
+    font-weight: $weight;
+    font-style: $style;
+    font-display: $display;
+    font-variant: $variant;
+  }
+}
+
+@include font-face('Arial','/static/fonts/Arial/ArialRegular')
+@include font-face('Helvetica','/static/fonts/HelveticaRegular/HelveticaRegular')
+
+body {
+  font-family: 'Arial', 'Helvetica', sans-serif;
+}
+

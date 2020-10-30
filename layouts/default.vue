@@ -8,6 +8,7 @@
 <script>
 	import Header from '../components/constLayouts/header'
 	import Footer from '../components/constLayouts/footer'
+
 	export default {
 		components: { Header, Footer },
 	}
@@ -18,8 +19,6 @@
 		padding: 0;
 		@include a;
 		@include baseProps;
-		@include font;
-		font-family: 'Poppins', sans-serif;
 	}
 
 	html {
@@ -28,6 +27,7 @@
 
 	body {
 		background-color: $bg;
+		font-family: 'Arial', 'Helvetica', sans-serif;
 	}
 
 	ul {
