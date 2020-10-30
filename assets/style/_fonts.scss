@@ -16,8 +16,8 @@
 // Font Face
 // =============================================================================
 
-@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff ttf ) {
-  $src: null;
+@mixin font-face($name, $path, $exts: eot woff ttf svg, $weight: normal, $style: normal,$stretch: normal,$display: swap, $variant: normal) {
+  $src: local($name);
 
   $extmods: (
     eot: "?",
@@ -37,8 +37,11 @@
 
   @font-face {
     font-family: quote($name);
-    font-style: $style;
     font-weight: $weight;
+    font-style: $style;
+    font-stretch: $stretch;
+    font-display: $display;
+    font-variant: $variant;
     src: $src;
   }
 }
@@ -49,7 +52,8 @@ $font-locale-Arial-path:'/fonts/Arial/ArialRegular';
 $font-locale-Helvetica:'Helvetica';
 $font-locale-Helvetica-path:'/fonts/Helvetica/HelveticaRegular';
 
-@include font-face($font-locale-Arial, $font-locale-Arial-path)
+$ext: ttf;
+@include font-face($font-locale-Arial, $font-locale-Arial-path, $ext)
 @include font-face($font-locale-Helvetica,$font-locale-Helvetica-path )
 
 
